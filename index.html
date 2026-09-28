@@ -6,74 +6,85 @@
   <title>Portiva — Activity. Utility. Rewards.</title>
   <style>
     :root {
-      --navy: #070f1a;
-      --navy-2: #0b1a2e;
+      --navy: #060d18;
       --gold: #d4af37;
       --gold-soft: #e8c96a;
       --teal: #00c2c7;
+      --teal-dark: #009aa0;
       --text: #e2e8f0;
       --muted: #94a3b8;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--navy);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
-    .bg-glow {
+    .bg {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 194, 199, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.09) 0%, transparent 40%);
+        radial-gradient(circle at 15% 25%, rgba(0,194,199,0.13) 0%, transparent 42%),
+        radial-gradient(circle at 85% 75%, rgba(212,175,55,0.09) 0%, transparent 42%);
       z-index: -1;
-      animation: bgMove 18s ease-in-out infinite alternate;
+      animation: drift 22s ease-in-out infinite alternate;
     }
 
-    @keyframes bgMove {
-      0% { transform: scale(1) translate(0, 0); }
-      100% { transform: scale(1.1) translate(-2%, 2%); }
+    @keyframes drift {
+      0% { transform: scale(1) translate(0,0); }
+      100% { transform: scale(1.08) translate(-1.5%, 1.5%); }
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 22px;
     }
 
+    /* ===== HERO ===== */
     header {
       padding: 70px 0 50px;
       text-align: center;
     }
 
-    .logo-img {
-      max-width: 320px;
-      width: 100%;
-      margin: 0 auto 30px;
-      display: block;
-      filter: drop-shadow(0 0 30px rgba(0, 194, 199, 0.25));
-      animation: logoFloat 6s ease-in-out infinite;
+    .logo-mark {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 26px;
+      background: linear-gradient(145deg, var(--gold), var(--teal));
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 800;
+      color: #060d18;
+      box-shadow: 0 0 50px rgba(0,194,199,0.3);
+      animation: float 5.5s ease-in-out infinite;
     }
 
-    @keyframes logoFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
     }
 
     .tagline {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--teal);
       letter-spacing: 3px;
       margin-bottom: 18px;
@@ -81,21 +92,21 @@
     }
 
     .subtitle {
-      max-width: 580px;
-      margin: 0 auto 36px;
+      max-width: 560px;
+      margin: 0 auto 34px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
 
     .buttons {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 32px;
+      padding: 13px 30px;
       border-radius: 10px;
       font-weight: 600;
       font-size: 0.95rem;
@@ -104,14 +115,14 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--teal), #009aa0);
-      color: white;
-      box-shadow: 0 4px 24px rgba(0, 194, 199, 0.35);
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: #fff;
+      box-shadow: 0 4px 22px rgba(0,194,199,0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0, 194, 199, 0.5);
+      box-shadow: 0 8px 28px rgba(0,194,199,0.5);
     }
 
     .btn-secondary {
@@ -121,28 +132,29 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(212, 175, 55, 0.12);
+      background: rgba(212,175,55,0.12);
       transform: translateY(-3px);
     }
 
+    /* ===== SECTIONS ===== */
     section {
-      margin: 40px 0;
-      padding: 36px 32px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(212, 175, 55, 0.12);
+      margin: 38px 0;
+      padding: 34px 30px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(212,175,55,0.13);
       border-radius: 18px;
       backdrop-filter: blur(8px);
       transition: border-color 0.3s ease;
     }
 
     section:hover {
-      border-color: rgba(0, 194, 199, 0.25);
+      border-color: rgba(0,194,199,0.28);
     }
 
     h2 {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       color: var(--gold);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -158,27 +170,85 @@
 
     p {
       color: var(--muted);
-      margin-bottom: 12px;
+      margin-bottom: 11px;
       font-size: 1.02rem;
     }
 
-    strong {
-      color: var(--text);
+    strong { color: var(--text); }
+
+    /* ===== ENGINE MAVIS ===== */
+    .engine-visual {
+      width: 180px;
+      height: 180px;
+      margin: 20px auto 28px;
+      position: relative;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,194,199,0.25) 0%, transparent 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+
+    .ring1 {
+      width: 100%;
+      height: 100%;
+      border-top-color: var(--teal);
+      border-right-color: var(--gold);
+      animation: spin 8s linear infinite;
+    }
+
+    .ring2 {
+      width: 75%;
+      height: 75%;
+      border-bottom-color: var(--teal);
+      border-left-color: var(--gold);
+      animation: spin 5.5s linear infinite reverse;
+    }
+
+    .ring3 {
+      width: 48%;
+      height: 48%;
+      border-top-color: var(--gold);
+      border-right-color: var(--teal);
+      animation: spin 3.8s linear infinite;
+    }
+
+    .core {
+      width: 28%;
+      height: 28%;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(0,194,199,0.6);
+      animation: pulseCore 2.2s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseCore {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.88); opacity: 0.75; }
     }
 
     .engine-box {
-      margin-top: 24px;
-      background: linear-gradient(145deg, rgba(0, 194, 199, 0.07), rgba(212, 175, 55, 0.04));
-      border: 1px solid rgba(0, 194, 199, 0.22);
+      background: linear-gradient(145deg, rgba(0,194,199,0.07), rgba(212,175,55,0.04));
+      border: 1px solid rgba(0,194,199,0.22);
       border-radius: 14px;
-      padding: 24px;
+      padding: 22px;
     }
 
     .engine-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       flex-wrap: wrap;
       gap: 10px;
     }
@@ -189,81 +259,81 @@
       gap: 10px;
       color: var(--teal);
       font-weight: 600;
-      font-size: 1.05rem;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       background: #22c55e;
       border-radius: 50%;
-      box-shadow: 0 0 14px #22c55e;
-      animation: pulse 1.6s infinite;
+      box-shadow: 0 0 12px #22c55e;
+      animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.35; }
     }
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
     }
 
     .metric {
-      background: rgba(0, 0, 0, 0.28);
-      border-radius: 12px;
-      padding: 16px 12px;
+      background: rgba(0,0,0,0.28);
+      border-radius: 11px;
+      padding: 14px 10px;
       text-align: center;
     }
 
     .metric-value {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--gold);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       font-variant-numeric: tabular-nums;
     }
 
     .metric-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
+    /* ===== ROADMAP ===== */
     .stage {
-      margin-bottom: 26px;
-      padding-left: 18px;
-      border-left: 2px solid rgba(0, 194, 199, 0.35);
+      margin-bottom: 24px;
+      padding-left: 16px;
+      border-left: 2px solid rgba(0,194,199,0.35);
     }
 
     .stage h3 {
       color: var(--teal);
-      font-size: 1.12rem;
-      margin-bottom: 6px;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
     }
 
     .stage em {
       color: var(--gold-soft);
       font-style: normal;
-      font-size: 0.93rem;
+      font-size: 0.92rem;
     }
 
     .journey {
       text-align: center;
-      margin-top: 28px;
-      padding: 14px;
-      background: rgba(212, 175, 55, 0.08);
+      margin-top: 26px;
+      padding: 13px;
+      background: rgba(212,175,55,0.08);
       border-radius: 10px;
       color: var(--gold);
       font-weight: 600;
       letter-spacing: 1.5px;
-      font-size: 1.05rem;
     }
 
+    /* ===== TOKENOMICS ===== */
     .token-list {
       list-style: none;
     }
@@ -275,18 +345,17 @@
       justify-content: space-between;
     }
 
-    .token-list li:last-child {
-      border-bottom: none;
-    }
+    .token-list li:last-child { border-bottom: none; }
 
     .pct {
       color: var(--gold);
       font-weight: 600;
     }
 
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
-      padding: 50px 0 40px;
+      padding: 48px 0 36px;
       color: var(--muted);
       font-size: 0.9rem;
     }
@@ -298,18 +367,19 @@
     }
 
     @media (max-width: 600px) {
-      .logo-img { max-width: 240px; }
-      section { padding: 28px 20px; }
+      section { padding: 26px 18px; }
+      .logo-mark { width: 76px; height: 76px; font-size: 40px; }
     }
   </style>
 </head>
 <body>
-  <div class="bg-glow"></div>
+  <div class="bg"></div>
 
   <div class="container">
 
     <header>
-      <img src="./Logo.png" alt="Portiva Logo" class="logo-img">
+      <div class="logo-mark">P</div>
+      <h1>PORTIVA</h1>
       <div class="tagline">ACTIVITY · UTILITY · REWARDS</div>
       <p class="subtitle">
         A crypto ecosystem designed to turn participation into utility and rewards through staking, locking, community activity, and crypto lending.
@@ -331,6 +401,14 @@
       <h2>Engine Mavis</h2>
       <p>At the core of Portiva sits <strong style="color:var(--teal)">Engine Mavis</strong> — the system that calculates and tracks every transaction across the ecosystem.</p>
       <p>Every meaningful action is recorded and measured. This creates transparency, accountability, and a foundation for fair rewards as the ecosystem grows.</p>
+
+      <!-- Spinning Engine -->
+      <div class="engine-visual">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="core"></div>
+      </div>
 
       <div class="engine-box">
         <div class="engine-top">
@@ -396,18 +474,19 @@
       <h2>Tokenomics</h2>
       <ul class="token-list">
         <li><span>Total Supply</span> <span class="pct">1,000,000,000</span></li>
-        <li><span>Community / Fair Launch</span> <span class="pct">80%</span></li>
+        <li><span>Community / Fair Launch</span> <span class="pct">70%</span></li>
+        <li><span>Future Rewards & Incentives</span> <span class="pct">12%</span></li>
         <li><span>Liquidity (Locked)</span> <span class="pct">10%</span></li>
-        <li><span>Community Treasury</span> <span class="pct">7%</span></li>
+        <li><span>Community Treasury</span> <span class="pct">5%</span></li>
         <li><span>Team (Locked 12 months)</span> <span class="pct">3%</span></li>
       </ul>
-      <p style="margin-top:18px;">Transparent. Locked. Built for long-term alignment.</p>
+      <p style="margin-top:16px;">Transparent. Locked. Built for long-term alignment and future rewards.</p>
     </section>
 
     <section style="text-align:center;">
       <h2 style="justify-content:center;">Join the System</h2>
       <p>Don’t just watch Portiva.<br>Join the build, grow the community, and participate in the ecosystem.</p>
-      <div class="buttons" style="margin-top:26px;">
+      <div class="buttons" style="margin-top:24px;">
         <a href="#" class="btn btn-primary">Join Discord</a>
         <a href="#" class="btn btn-secondary">Follow on X</a>
       </div>
@@ -437,7 +516,7 @@
       uptimeEl.textContent = `\( {h}: \){m}:${s}`;
     }
 
-    setInterval(update, 2100);
+    setInterval(update, 2000);
     update();
   </script>
 </body>
