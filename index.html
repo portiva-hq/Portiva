@@ -1117,14 +1117,14 @@
         10px;
 
       color:
-        var(--teal);
+        var(--gold-light);
 
       font-weight:
         600;
     }
 
 
-    .dot {
+    .dot-gold {
 
       width:
         9px;
@@ -1133,14 +1133,14 @@
         9px;
 
       background:
-        var(--green);
+        var(--gold-light);
 
       border-radius:
         50%;
 
       box-shadow:
         0 0 12px
-        var(--green);
+        var(--gold-light);
 
       animation:
         pulse 1.5s infinite;
@@ -1205,7 +1205,7 @@
     .metric-value {
 
       font-size:
-        1.4rem;
+        1.2rem;
 
       font-weight:
         700;
@@ -1342,6 +1342,52 @@
        TOKENOMICS
        ========================================================= */
 
+    .tokenomics-grid {
+
+      display:
+        grid;
+
+      gap:
+        14px;
+
+      margin:
+        20px 0;
+
+    }
+
+
+    .token-card {
+
+      background:
+        rgba(0, 0, 0, 0.3);
+
+      border:
+        1px solid
+        rgba(0, 194, 199, 0.18);
+
+      border-radius:
+        12px;
+
+      padding:
+        16px;
+
+    }
+
+
+    .token-card h4 {
+
+      color:
+        var(--teal);
+
+      font-size:
+        1rem;
+
+      margin-bottom:
+        6px;
+
+    }
+
+
     #tokenomics-content {
 
       display:
@@ -1394,7 +1440,7 @@
     .token-list li {
 
       padding:
-        11px 0;
+        14px 0;
 
       border-bottom:
         1px solid
@@ -1403,11 +1449,11 @@
       display:
         flex;
 
-      justify-content:
-        space-between;
+      flex-direction:
+        column;
 
       gap:
-        20px;
+        4px;
     }
 
 
@@ -1418,13 +1464,41 @@
     }
 
 
+    .token-row-top {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      font-weight:
+        600;
+
+    }
+
+
+    .token-desc {
+
+      font-size:
+        .85rem;
+
+      color:
+        var(--muted);
+
+      line-height:
+        1.4;
+
+    }
+
+
     .pct {
 
       color:
         var(--gold-light);
 
       font-weight:
-        600;
+        700;
     }
 
 
@@ -1533,7 +1607,7 @@
 
   <!-- =======================================================
        WEBSITE
-       ======================================================= -->
+       ========================================================= -->
 
   <div class="container">
 
@@ -1663,21 +1737,14 @@
           Engine Mavis
         </strong>
 
-        — the system that calculates
-        and tracks every transaction
-        across the ecosystem.
+        — the state-calculation and transaction verification framework powering the ecosystem.
 
       </p>
 
 
       <p>
 
-        Every meaningful action is
-        recorded and measured.
-
-        This creates transparency,
-        accountability, and a foundation
-        for fair rewards as the ecosystem grows.
+        Engine Mavis will officially go live once the token is latticed and core tokenomics are fully integrated on-chain. Once active, preps and participants will gain real-time visibility into live transaction streaming, transparent contact address verification, and cryptographic state mapping directly from the network core.
 
       </p>
 
@@ -1707,9 +1774,9 @@
 
           <div class="engine-live">
 
-            <span class="dot"></span>
+            <span class="dot-gold"></span>
 
-            Engine Mavis — Live
+            Engine Mavis — Initializing Phase
 
           </div>
 
@@ -1721,7 +1788,7 @@
             "
           >
 
-            Status: Operational
+            Status: Pending Token Latticing
 
           </div>
 
@@ -1734,15 +1801,12 @@
 
           <div class="metric">
 
-            <div
-              class="metric-value"
-              id="txCount"
-            >
-              1,284
+            <div class="metric-value">
+              STANDBY
             </div>
 
             <div class="metric-label">
-              Tracked Actions
+              Live Feed
             </div>
 
           </div>
@@ -1751,11 +1815,11 @@
           <div class="metric">
 
             <div class="metric-value">
-              98.7%
+              OPTIONAL
             </div>
 
             <div class="metric-label">
-              System Health
+              Contract State
             </div>
 
           </div>
@@ -1764,7 +1828,7 @@
           <div class="metric">
 
             <div class="metric-value">
-              LIVE
+              PRE-LAUNCH
             </div>
 
             <div class="metric-label">
@@ -1776,15 +1840,12 @@
 
           <div class="metric">
 
-            <div
-              class="metric-value"
-              id="uptime"
-            >
-              00:00:00
+            <div class="metric-value">
+              LATTICING
             </div>
 
             <div class="metric-label">
-              Uptime
+              Integration State
             </div>
 
           </div>
@@ -1927,23 +1988,47 @@
 
 
     <!-- =====================================================
-         TOKENOMICS
+         CRYPTOGRAPHIC TOKENOMICS
          ===================================================== -->
 
     <section>
 
       <h2>
-        Tokenomics
+        Cryptographic Architecture & Tokenomics
       </h2>
 
 
       <p>
 
-        Transparent allocation designed
-        for long-term alignment and
-        future rewards.
+        The Portiva token ecosystem relies on an algorithmic distribution framework designed to ensure game-theoretic alignment, cryptographic transparency, and sustained economic equilibrium. The core state mechanism employs a deterministic allocation topology combined with non-custodial cryptographic lockup primitives.
 
       </p>
+
+
+      <div class="tokenomics-grid">
+
+        <div class="token-card">
+          <h4>Deterministic State Verification</h4>
+          <p style="font-size: 0.88rem; margin: 0;">
+            Engine Mavis evaluates user participation and rewards distribution using verifiable execution pathways, preventing state manipulation and guaranteeing ledger integrity across all network nodes.
+          </p>
+        </div>
+
+        <div class="token-card">
+          <h4>Automated Liquidity Latticing</h4>
+          <p style="font-size: 0.88rem; margin: 0;">
+            Initial pool liquidity is bound via non-custodial, time-locked smart contracts featuring immutable execution parameters to establish a robust decentralized market depth.
+          </p>
+        </div>
+
+        <div class="token-card">
+          <h4>Algorithmic Sink & Fee Mechanics</h4>
+          <p style="font-size: 0.88rem; margin: 0;">
+            Transaction volume metrics feed into dynamic incentive structures, utilizing automated protocol sink channels designed to prioritize long-term ecosystem participants over speculative actors.
+          </p>
+        </div>
+
+      </div>
 
 
       <div
@@ -1958,7 +2043,7 @@
           onclick="toggleTokenomics()"
           id="tokenBtn"
         >
-          View Full Tokenomics
+          View Full Cryptographic Distribution
         </button>
 
       </div>
@@ -1972,80 +2057,68 @@
 
 
           <li>
-
-            <span>
-              Total Supply
-            </span>
-
-            <span class="pct">
-              1,000,000,000
-            </span>
-
+            <div class="token-row-top">
+              <span>Max Cryptographic Supply (Hard Cap)</span>
+              <span class="pct">1,000,000,000 $PORT</span>
+            </div>
+            <div class="token-desc">
+              Immutable base supply limit enforced at the smart contract level with zero minting capabilities post-deployment.
+            </div>
           </li>
 
 
           <li>
-
-            <span>
-              Community / Fair Launch
-            </span>
-
-            <span class="pct">
-              72%
-            </span>
-
+            <div class="token-row-top">
+              <span>Decentralized Community / Fair Launch</span>
+              <span class="pct">72%</span>
+            </div>
+            <div class="token-desc">
+              Broad public distribution engineered to maximize decentralization, community governance spread, and organic network ownership.
+            </div>
           </li>
 
 
           <li>
-
-            <span>
-              Future Rewards & Incentives
-            </span>
-
-            <span class="pct">
-              10%
-            </span>
-
+            <div class="token-row-top">
+              <span>Proof-of-Activity & Dynamic Rewards Pool</span>
+              <span class="pct">10%</span>
+            </div>
+            <div class="token-desc">
+              Programmatic reward allocation streaming through Engine Mavis to incentivize active engagement, node validation, and ecosystem participation.
+            </div>
           </li>
 
 
           <li>
-
-            <span>
-              Liquidity (Locked)
-            </span>
-
-            <span class="pct">
-              10%
-            </span>
-
+            <div class="token-row-top">
+              <span>Immutable Automated Market Maker Liquidity</span>
+              <span class="pct">10%</span>
+            </div>
+            <div class="token-desc">
+              Cryptographically locked in decentralized liquidity pools to preserve market stability, continuous swapping efficiency, and slippage reduction.
+            </div>
           </li>
 
 
           <li>
-
-            <span>
-              Community Treasury
-            </span>
-
-            <span class="pct">
-              5%
-            </span>
-
+            <div class="token-row-top">
+              <span>Decentralized Autonomous Organization (DAO) Treasury</span>
+              <span class="pct">5%</span>
+            </div>
+            <div class="token-desc">
+              Multisig vault governed by community consensus to finance strategic protocol upgrades, audits, partnerships, and liquidity expansion.
+            </div>
           </li>
 
 
           <li>
-
-            <span>
-              Team (Locked 12 months)
-            </span>
-
-            <span class="pct">
-              3%
-            </span>
-
+            <div class="token-row-top">
+              <span>Core Contributors (12-Month Cryptographic Lock)</span>
+              <span class="pct">3%</span>
+            </div>
+            <div class="token-desc">
+              Allocated to founding developers with a mandatory 12-month linear vesting smart contract to guarantee multi-year alignment.
+            </div>
           </li>
 
 
@@ -2054,13 +2127,12 @@
 
         <p
           style="
-            margin-top:16px;
+            margin-top:18px;
+            font-size: 0.9rem;
           "
         >
 
-          Transparent. Locked.
-          Built for long-term alignment
-          and future rewards.
+          All tokenomics primitives are cryptographically locked and governed by deterministically verifiable execution pathways.
 
         </p>
 
@@ -2557,100 +2629,6 @@
 
 
     /* =======================================================
-       ENGINE MAVIS LIVE COUNTER
-       ======================================================= */
-
-    let tx =
-      1284;
-
-
-    const txEl =
-      document.getElementById(
-        "txCount"
-      );
-
-
-    const uptimeEl =
-      document.getElementById(
-        "uptime"
-      );
-
-
-    const start =
-      Date.now();
-
-
-    function updateEngine() {
-
-
-      tx +=
-        Math.floor(
-          Math.random() * 3
-        ) + 1;
-
-
-      txEl.textContent =
-        tx.toLocaleString();
-
-
-      const diff =
-        Math.floor(
-          (
-            Date.now() -
-            start
-          ) / 1000
-        );
-
-
-      const h =
-        String(
-          Math.floor(
-            diff / 3600
-          )
-        ).padStart(
-          2,
-          "0"
-        );
-
-
-      const m =
-        String(
-          Math.floor(
-            (diff % 3600) /
-            60
-          )
-        ).padStart(
-          2,
-          "0"
-        );
-
-
-      const s =
-        String(
-          diff % 60
-        ).padStart(
-          2,
-          "0"
-        );
-
-
-      uptimeEl.textContent =
-        `${h}:${m}:${s}`;
-
-    }
-
-
-    setInterval(
-      updateEngine,
-      2000
-    );
-
-
-    updateEngine();
-
-
-
-    /* =======================================================
        TOKENOMICS TOGGLE
        ======================================================= */
 
@@ -2680,7 +2658,7 @@
 
 
         button.textContent =
-          "View Full Tokenomics";
+          "View Full Cryptographic Distribution";
 
       }
 
@@ -2692,7 +2670,7 @@
 
 
         button.textContent =
-          "Hide Tokenomics";
+          "Hide Cryptographic Distribution";
 
       }
 
