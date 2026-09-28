@@ -1,66 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="PORTIVA — Activity. Utility. Rewards. A crypto ecosystem built around participation, staking, locking and future crypto lending.">
-<title>PORTIVA — Activity. Utility. Rewards.</title>
-<style>
-:root{--bg:#07110f;--panel:#0c1916;--panel2:#10221e;--text:#f1f7f3;--muted:#9eb3aa;--accent:#73e6a6;--accent2:#b7f7cf;--line:rgba(115,230,166,.16);--max:1120px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(75,180,125,.16),transparent 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
-a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 22px}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-.logo{font-weight:900;letter-spacing:.16em;font-size:1.1rem}.logo span{color:var(--accent)}
-.navlinks{display:flex;gap:25px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--text)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid var(--line);border-radius:12px;font-weight:750;background:rgba(255,255,255,.03);transition:.2s}
-.btn.primary{background:var(--accent);color:#062014;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
-.hero{padding:105px 0 90px;text-align:center;position:relative}.eyebrow{display:inline-block;padding:7px 12px;border:1px solid var(--line);border-radius:999px;color:var(--accent2);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-h1{font-size:clamp(3.4rem,10vw,7.2rem);line-height:.9;letter-spacing:-.07em;margin:22px 0 18px}
-.hero h1 span{color:var(--accent)}.hero p{max-width:700px;margin:0 auto 30px;color:var(--muted);font-size:1.12rem}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-section{padding:80px 0}.sectionhead{max-width:720px;margin-bottom:38px}.kicker{color:var(--accent);font-weight:850;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem}.sectionhead h2{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:9px 0 12px;letter-spacing:-.04em}.sectionhead p{color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:20px;padding:25px}.card h3{margin:0 0 9px;font-size:1.15rem}.card p{margin:0;color:var(--muted)}
-.engine{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}.enginebox{border:1px solid var(--line);border-radius:24px;padding:34px;background:linear-gradient(135deg,#0d2019,#0a1512);min-height:310px}.enginebox h3{font-size:2rem;margin:12px 0}.enginebox p{color:var(--muted)}.pulse{display:grid;place-items:center;border:1px solid var(--line);border-radius:24px;background:radial-gradient(circle,rgba(115,230,166,.13),transparent 52%);min-height:310px}.core{width:125px;height:125px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent);font-weight:900;letter-spacing:.08em;box-shadow:0 0 65px rgba(115,230,166,.16)}
-.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stage{position:relative;padding:25px;border-top:2px solid var(--accent);background:var(--panel);border-radius:0 0 18px 18px}.num{font-size:.75rem;color:var(--accent);font-weight:900}.stage h3{margin:7px 0}.stage p{color:var(--muted);font-size:.92rem}.action{color:var(--accent2);font-size:.85rem;font-weight:700}
-.journey{text-align:center;border:1px solid var(--line);border-radius:24px;padding:30px;background:var(--panel)}.journeyline{font-size:clamp(1.05rem,3vw,1.7rem);font-weight:900;letter-spacing:.04em;word-spacing:8px}.journeyline span{color:var(--accent)}
-.token{display:grid;grid-template-columns:1fr 1fr;gap:22px}.supply{border:1px solid var(--line);border-radius:24px;padding:30px;background:var(--panel)}.supply strong{font-size:2.5rem;display:block}.bar{height:13px;border-radius:99px;overflow:hidden;background:#182823;margin:25px 0}.bar i{display:block;height:100%;width:80%;background:var(--accent)}.alloc{display:grid;gap:12px}.row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row b{color:var(--accent)}
-.cta{padding:75px 25px;text-align:center;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 50% 0,rgba(115,230,166,.12),transparent 50%),var(--panel)}.cta h2{font-size:clamp(2rem,5vw,3.4rem);margin:0 0 10px}.cta p{color:var(--muted);max-width:620px;margin:0 auto 25px}
-footer{padding:45px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.social{display:flex;gap:18px}.social a:hover{color:var(--accent)}
-@media(max-width:800px){.navlinks{display:none}.grid,.roadmap,.token,.engine{grid-template-columns:1fr}.hero{padding-top:75px}.journeyline{line-height:2}.enginebox,.pulse{min-height:auto}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portiva — Activity. Utility. Rewards.</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: #0A1628;
+      color: #E5E7EB;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #D4AF37;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #00C2C7;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #A0AEC0;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #00C2C7;
+      color: #0A1628;
+    }
+
+    .btn-primary:hover {
+      background-color: #00a8ad;
+    }
+
+    .btn-secondary {
+      border: 2px solid #D4AF37;
+      color: #D4AF37;
+    }
+
+    .btn-secondary:hover {
+      background-color: #D4AF37;
+      color: #0A1628;
+    }
+
+    section {
+      margin: 60px 0;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    h2 {
+      color: #D4AF37;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #00C2C7;
+      margin: 25px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #CBD5E0;
+    }
+
+    .stage {
+      margin-bottom: 25px;
+    }
+
+    .journey {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #D4AF37;
+      margin-top: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .tokenomics {
+      list-style: none;
+    }
+
+    .tokenomics li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #718096;
+      font-size: 0.9rem;
+    }
+
+    footer .brand {
+      color: #D4AF37;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-<nav><a class="logo" href="#">POR<span>TIVA</span></a><div class="navlinks"><a href="#about">About</a><a href="#engine">Engine Mavis</a><a href="#roadmap">Roadmap</a><a href="#tokenomics">Tokenomics</a></div><a class="btn" href="#join">Join</a></nav>
+  <div class="container">
 
-<header class="hero">
-<div class="eyebrow">Activity • Utility • Rewards</div>
-<h1>PORT<span>IVA</span></h1>
-<p>A crypto ecosystem designed to turn participation into utility and rewards through community activity, staking, locking and future crypto lending.</p>
-<div class="actions"><a class="btn primary" href="https://discord.com/" target="_blank" rel="noopener">Join Discord</a><a class="btn" href="https://x.com/" target="_blank" rel="noopener">Follow on X</a></div>
-</header>
+    <header>
+      <h1>PORTIVA</h1>
+      <div class="tagline">Activity. Utility. Rewards.</div>
+      <p class="subtitle">A crypto ecosystem designed to turn participation into utility and rewards through staking, locking, community activity, and crypto lending.</p>
+      
+      <div class="buttons">
+        <a href="#" class="btn btn-primary">Join Discord</a>
+        <a href="#" class="btn btn-secondary">Follow on X</a>
+      </div>
+    </header>
 
-<section id="about"><div class="sectionhead"><div class="kicker">What is PORTIVA?</div><h2>Not just another token.</h2><p>PORTIVA is a system built around meaningful participation. As the ecosystem develops, activity can connect to utility, staking, locking and future crypto lending.</p></div>
-<div class="grid"><div class="card"><h3>Activity</h3><p>Community participation forms the foundation of the ecosystem.</p></div><div class="card"><h3>Utility</h3><p>Features are introduced in stages, moving beyond simple token speculation.</p></div><div class="card"><h3>Rewards</h3><p>Eligible participation can unlock ecosystem rewards as the system develops.</p></div></div></section>
+    <section>
+      <h2>What is Portiva?</h2>
+      <p>Portiva is not just another token.<br>It is a system built to reward real participation.</p>
+      <p>Through community activity, staking, locking, and future crypto lending, Portiva creates a clear path where involvement turns into utility and rewards.</p>
+    </section>
 
-<section id="engine"><div class="sectionhead"><div class="kicker">The Core System</div><h2>Engine Mavis</h2><p>At the core of PORTIVA sits Engine Mavis — the planned system for calculating and tracking activity across the ecosystem.</p></div>
-<div class="engine"><div class="enginebox"><div class="kicker">ENGINE MAVIS</div><h3>Measure. Track. Connect.</h3><p>Meaningful ecosystem actions can be recorded and measured to create a transparent foundation for participation and future reward mechanisms.</p><p><strong>Engine Mavis is designed to power the PORTIVA system.</strong></p></div><div class="pulse"><div class="core">MAVIS</div></div></div></section>
+    <section>
+      <h2>Engine Mavis</h2>
+      <p>At the core of Portiva sits <strong style="color:#00C2C7;">Engine Mavis</strong> — the system that calculates and tracks every transaction across the ecosystem.</p>
+      <p>Every meaningful action is recorded and measured.<br>This creates transparency, accountability, and a foundation for fair rewards as the ecosystem grows.</p>
+      <p>Engine Mavis is the engine that powers the entire Portiva system.</p>
+    </section>
 
-<section id="roadmap"><div class="sectionhead"><div class="kicker">Roadmap</div><h2>Build first. Utility follows.</h2><p>Each stage has a purpose and a clear community action.</p></div>
-<div class="roadmap">
-<div class="stage"><div class="num">STAGE 01</div><h3>BUILD</h3><p>Core infrastructure, security, treasury and financial architecture.</p><div class="action">Action: Follow, learn, contribute.</div></div>
-<div class="stage"><div class="num">STAGE 02</div><h3>MEMME</h3><p>The community-growth stage: culture, attention and participation.</p><div class="action">Action: Join, create, share, invite.</div></div>
-<div class="stage"><div class="num">STAGE 03</div><h3>STAKE & LOCK</h3><p>Staking and locking mechanisms are introduced as the ecosystem develops.</p><div class="action">Action: Participate when live.</div></div>
-<div class="stage"><div class="num">STAGE 04</div><h3>CRYPTO LOANS</h3><p>Future lending functionality expands the financial utility of the ecosystem.</p><div class="action">Action: Participate when available.</div></div>
-</div></section>
+    <section>
+      <h2>Roadmap</h2>
 
-<section><div class="journey"><div class="kicker">The Journey</div><div class="journeyline"><span>BUILD</span> → MEMME → <span>STAKE</span> → <span>LOCK</span> → <span>LEND</span></div></div></section>
+      <div class="stage">
+        <h3>STAGE 1 — BUILD</h3>
+        <p>We build the core infrastructure, security, treasury, and financial system.<br>
+        <em>Your action: Follow the build, learn the system, and get involved early.</em></p>
+      </div>
 
-<section id="tokenomics"><div class="sectionhead"><div class="kicker">Tokenomics</div><h2>Designed for transparency.</h2><p>Initial allocation as defined by the current PORTIVA project plan.</p></div>
-<div class="token"><div class="supply"><span class="kicker">TOTAL SUPPLY</span><strong>1,000,000,000</strong><div class="bar"><i></i></div><p style="color:var(--muted)">80% Community / Fair Launch</p></div>
-<div class="supply"><div class="alloc"><div class="row"><span>Community / Fair Launch</span><b>80%</b></div><div class="row"><span>Liquidity — Locked</span><b>10%</b></div><div class="row"><span>Community Treasury</span><b>7%</b></div><div class="row"><span>Team — 12 months lock</span><b>3%</b></div></div></div></div></section>
+      <div class="stage">
+        <h3>STAGE 2 — MEMME</h3>
+        <p>MEMME is the community-growth stage. It creates attention, culture, and participation while PORTIVA continues to develop.<br>
+        <em>Your action: Join, create, share, invite others, and help grow the network.</em></p>
+      </div>
 
-<section id="join"><div class="cta"><div class="kicker">Join the System</div><h2>Don't just watch PORTIVA.</h2><p>Join the build, grow the community and participate as the ecosystem moves through each stage.</p><div class="actions"><a class="btn primary" href="https://discord.com/" target="_blank" rel="noopener">Join Discord</a><a class="btn" href="https://x.com/" target="_blank" rel="noopener">Follow on X</a></div></div></section>
-</div>
-<footer><div class="wrap foot"><div><strong>PORTIVA</strong> — Activity. Utility. Rewards.<br>© 2026 Portiva</div><div class="social"><a href="https://discord.com/" target="_blank" rel="noopener">Discord</a><a href="https://x.com/" target="_blank" rel="noopener">X</a></div></div></footer>
+      <div class="stage">
+        <h3>STAGE 3 — STAKE & LOCK</h3>
+        <p>PORTIVA introduces staking and locking, creating new ways for eligible participants to contribute to and benefit from the ecosystem.<br>
+        <em>Your action: Participate, stake, and lock when these features launch.</em></p>
+      </div>
+
+      <div class="stage">
+        <h3>STAGE 4 — CRYPTO LOANS</h3>
+        <p>PORTIVA expands into crypto lending, bringing additional financial utility to the ecosystem.<br>
+        <em>Your action: Participate in the lending ecosystem as new features become available.</em></p>
+      </div>
+
+      <div class="journey">BUILD → MEMME → STAKE → LOCK → LEND</div>
+    </section>
+
+    <section>
+      <h2>Tokenomics</h2>
+      <ul class="tokenomics">
+        <li>Total Supply: <strong>1,000,000,000</strong></li>
+        <li>80% — Community / Fair Launch</li>
+        <li>10% — Liquidity (Locked)</li>
+        <li>7% — Community Treasury</li>
+        <li>3% — Team (Locked 12 months)</li>
+      </ul>
+      <p style="margin-top:20px;">Transparent. Locked. Built for long-term alignment.</p>
+    </section>
+
+    <section style="text-align:center;">
+      <h2>Join the System</h2>
+      <p>Don’t just watch Portiva.<br>Join the build, grow the community, and participate in the ecosystem.</p>
+      
+      <div class="buttons" style="margin-top:25px;">
+        <a href="#" class="btn btn-primary">Join Discord</a>
+        <a href="#" class="btn btn-secondary">Follow on X</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="brand">Portiva — Activity. Utility. Rewards.</div>
+      <div>© 2026 Portiva</div>
+    </footer>
+
+  </div>
 </body>
 </html>
