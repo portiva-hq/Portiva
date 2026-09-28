@@ -46,7 +46,6 @@
       padding: 0 22px;
     }
 
-    /* ===== HERO ===== */
     header {
       padding: 70px 0 50px;
       text-align: center;
@@ -112,6 +111,8 @@
       font-size: 0.95rem;
       text-decoration: none;
       transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -136,7 +137,6 @@
       transform: translateY(-3px);
     }
 
-    /* ===== SECTIONS ===== */
     section {
       margin: 38px 0;
       padding: 34px 30px;
@@ -176,7 +176,6 @@
 
     strong { color: var(--text); }
 
-    /* ===== ENGINE MAVIS ===== */
     .engine-visual {
       width: 180px;
       height: 180px;
@@ -196,42 +195,35 @@
     }
 
     .ring1 {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       border-top-color: var(--teal);
       border-right-color: var(--gold);
       animation: spin 8s linear infinite;
     }
 
     .ring2 {
-      width: 75%;
-      height: 75%;
+      width: 75%; height: 75%;
       border-bottom-color: var(--teal);
       border-left-color: var(--gold);
       animation: spin 5.5s linear infinite reverse;
     }
 
     .ring3 {
-      width: 48%;
-      height: 48%;
+      width: 48%; height: 48%;
       border-top-color: var(--gold);
       border-right-color: var(--teal);
       animation: spin 3.8s linear infinite;
     }
 
     .core {
-      width: 28%;
-      height: 28%;
+      width: 28%; height: 28%;
       background: linear-gradient(135deg, var(--teal), var(--gold));
       border-radius: 50%;
       box-shadow: 0 0 30px rgba(0,194,199,0.6);
       animation: pulseCore 2.2s ease-in-out infinite;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
+    @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes pulseCore {
       0%,100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(0.88); opacity: 0.75; }
@@ -303,7 +295,6 @@
       letter-spacing: 0.4px;
     }
 
-    /* ===== ROADMAP ===== */
     .stage {
       margin-bottom: 24px;
       padding-left: 16px;
@@ -333,7 +324,22 @@
       letter-spacing: 1.5px;
     }
 
-    /* ===== TOKENOMICS ===== */
+    /* Tokenomics hidden by default */
+    #tokenomics-content {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #tokenomics-content.show {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .token-list {
       list-style: none;
     }
@@ -352,7 +358,6 @@
       font-weight: 600;
     }
 
-    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 48px 0 36px;
@@ -402,7 +407,6 @@
       <p>At the core of Portiva sits <strong style="color:var(--teal)">Engine Mavis</strong> — the system that calculates and tracks every transaction across the ecosystem.</p>
       <p>Every meaningful action is recorded and measured. This creates transparency, accountability, and a foundation for fair rewards as the ecosystem grows.</p>
 
-      <!-- Spinning Engine -->
       <div class="engine-visual">
         <div class="ring ring1"></div>
         <div class="ring ring2"></div>
@@ -470,17 +474,28 @@
       <div class="journey">BUILD → MEMME → STAKE → LOCK → LEND</div>
     </section>
 
+    <!-- TOKENOMICS - Click to reveal -->
     <section>
       <h2>Tokenomics</h2>
-      <ul class="token-list">
-        <li><span>Total Supply</span> <span class="pct">1,000,000,000</span></li>
-        <li><span>Community / Fair Launch</span> <span class="pct">70%</span></li>
-        <li><span>Future Rewards & Incentives</span> <span class="pct">12%</span></li>
-        <li><span>Liquidity (Locked)</span> <span class="pct">10%</span></li>
-        <li><span>Community Treasury</span> <span class="pct">5%</span></li>
-        <li><span>Team (Locked 12 months)</span> <span class="pct">3%</span></li>
-      </ul>
-      <p style="margin-top:16px;">Transparent. Locked. Built for long-term alignment and future rewards.</p>
+      <p>Transparent allocation designed for long-term alignment and future rewards.</p>
+      
+      <div style="text-align:center; margin-top:20px;">
+        <button class="btn btn-primary" onclick="toggleTokenomics()" id="tokenBtn">
+          View Full Tokenomics
+        </button>
+      </div>
+
+      <div id="tokenomics-content">
+        <ul class="token-list">
+          <li><span>Total Supply</span> <span class="pct">1,000,000,000</span></li>
+          <li><span>Community / Fair Launch</span> <span class="pct">72%</span></li>
+          <li><span>Future Rewards & Incentives</span> <span class="pct">10%</span></li>
+          <li><span>Liquidity (Locked)</span> <span class="pct">10%</span></li>
+          <li><span>Community Treasury</span> <span class="pct">5%</span></li>
+          <li><span>Team (Locked 12 months)</span> <span class="pct">3%</span></li>
+        </ul>
+        <p style="margin-top:16px;">Transparent. Locked. Built for long-term alignment and future rewards.</p>
+      </div>
     </section>
 
     <section style="text-align:center;">
@@ -500,6 +515,7 @@
   </div>
 
   <script>
+    // Live Engine
     let tx = 1284;
     const txEl = document.getElementById('txCount');
     const uptimeEl = document.getElementById('uptime');
@@ -518,6 +534,20 @@
 
     setInterval(update, 2000);
     update();
+
+    // Tokenomics toggle
+    function toggleTokenomics() {
+      const content = document.getElementById('tokenomics-content');
+      const btn = document.getElementById('tokenBtn');
+      
+      if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        btn.textContent = 'View Full Tokenomics';
+      } else {
+        content.classList.add('show');
+        btn.textContent = 'Hide Tokenomics';
+      }
+    }
   </script>
 </body>
 </html>
