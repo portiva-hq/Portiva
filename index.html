@@ -35,7 +35,6 @@
       --green: #22c55e;
     }
 
-
     /* =========================================================
        RESET
        ========================================================= */
@@ -67,7 +66,6 @@
       overflow-x: hidden;
     }
 
-
     /* =========================================================
        ANIMATED GOLD PARTICLE CANVAS
        ========================================================= */
@@ -84,12 +82,11 @@
       pointer-events: none;
     }
 
-
     /* =========================================================
        MOVING ATMOSPHERIC BACKGROUND
        ========================================================= */
 
-    .bg-glow {
+   .bg-glow {
       position: fixed;
       inset: -20%;
 
@@ -126,12 +123,11 @@
         aurora 16s ease-in-out infinite alternate;
     }
 
-
     /* =========================================================
        GOLDEN ENERGY CLOUDS
        ========================================================= */
 
-    .gold-haze {
+   .gold-haze {
       position: fixed;
 
       width: 70vw;
@@ -163,8 +159,7 @@
         hazeMove 18s ease-in-out infinite alternate;
     }
 
-
-    .gold-haze.two {
+   .gold-haze.two {
       left: auto;
       right: -30vw;
       top: 55vh;
@@ -180,12 +175,11 @@
       animation-delay: -7s;
     }
 
-
     /* =========================================================
        GOLD LIGHT SWEEP
        ========================================================= */
 
-    .light-sweep {
+   .light-sweep {
       position: fixed;
 
       top: -20%;
@@ -216,12 +210,11 @@
         sweep 13s ease-in-out infinite;
     }
 
-
     /* =========================================================
        DIGITAL GRID
        ========================================================= */
 
-    .gold-grid {
+   .gold-grid {
       position: fixed;
       inset: 0;
 
@@ -258,7 +251,6 @@
         gridMove 22s linear infinite;
     }
 
-
     /* =========================================================
        BACKGROUND ANIMATIONS
        ========================================================= */
@@ -283,7 +275,6 @@
       }
     }
 
-
     @keyframes hazeMove {
       0% {
         transform:
@@ -303,7 +294,6 @@
           scale(1.15);
       }
     }
-
 
     @keyframes sweep {
       0% {
@@ -331,7 +321,6 @@
       }
     }
 
-
     @keyframes gridMove {
       from {
         background-position:
@@ -346,12 +335,11 @@
       }
     }
 
-
     /* =========================================================
        MAIN CONTAINER
        ========================================================= */
 
-    .container {
+   .container {
       max-width: 980px;
 
       margin: 0 auto;
@@ -359,7 +347,6 @@
       padding:
         0 22px;
     }
-
 
     /* =========================================================
        HERO
@@ -374,12 +361,11 @@
       position: relative;
     }
 
-
     /* =========================================================
        ACTUAL PORTIVA LOGO
        ========================================================= */
 
-    .logo-container {
+   .logo-container {
 
       width: 180px;
       height: 180px;
@@ -400,8 +386,7 @@
         logoFloat 5s ease-in-out infinite;
     }
 
-
-    .logo-container::before {
+   .logo-container::before {
 
       content: "";
 
@@ -424,14 +409,13 @@
       filter:
         blur(7px);
 
-      opacity: .65;
+      opacity:.65;
 
       animation:
         logoRing 7s linear infinite;
     }
 
-
-    .logo-container::after {
+   .logo-container::after {
 
       content: "";
 
@@ -454,8 +438,7 @@
         rgba(0,194,199,.16);
     }
 
-
-    .portiva-logo {
+   .portiva-logo {
 
       width: 100%;
       height: 100%;
@@ -479,7 +462,6 @@
         rgba(0,194,199,.13);
     }
 
-
     @keyframes logoFloat {
 
       0%,
@@ -494,7 +476,6 @@
       }
     }
 
-
     @keyframes logoRing {
 
       to {
@@ -502,7 +483,6 @@
           rotate(360deg);
       }
     }
-
 
     /* =========================================================
        PORTIVA TITLE
@@ -553,7 +533,6 @@
         );
     }
 
-
     @keyframes goldText {
 
       to {
@@ -562,12 +541,11 @@
       }
     }
 
-
     /* =========================================================
        TAGLINE
        ========================================================= */
 
-    .tagline {
+   .tagline {
 
       font-size:
         1.05rem;
@@ -582,8 +560,7 @@
         18px;
     }
 
-
-    .subtitle {
+   .subtitle {
 
       max-width:
         590px;
@@ -598,12 +575,11 @@
         1.05rem;
     }
 
-
     /* =========================================================
        BUTTONS
        ========================================================= */
 
-    .buttons {
+   .buttons {
 
       display:
         flex;
@@ -618,8 +594,7 @@
         wrap;
     }
 
-
-    .btn {
+   .btn {
 
       padding:
         13px 30px;
@@ -631,13 +606,13 @@
         700;
 
       font-size:
-        .95rem;
+       .95rem;
 
       text-decoration:
         none;
 
       transition:
-        all .3s ease;
+        all.3s ease;
 
       cursor:
         pointer;
@@ -646,8 +621,7 @@
         inline-block;
     }
 
-
-    .btn-primary {
+   .btn-primary {
 
       border:
         1px solid
@@ -668,8 +642,7 @@
         rgba(0,194,199,.25);
     }
 
-
-    .btn-primary:hover {
+   .btn-primary:hover {
 
       transform:
         translateY(-3px);
@@ -679,8 +652,7 @@
         rgba(0,194,199,.45);
     }
 
-
-    .btn-secondary {
+   .btn-secondary {
 
       border:
         1px solid
@@ -697,8 +669,7 @@
         );
     }
 
-
-    .btn-secondary:hover {
+   .btn-secondary:hover {
 
       transform:
         translateY(-3px);
@@ -710,7 +681,6 @@
         0 0 25px
         rgba(212,175,55,.15);
     }
-
 
     /* =========================================================
        SECTIONS
@@ -751,9 +721,8 @@
         hidden;
 
       transition:
-        all .35s ease;
+        all.35s ease;
     }
-
 
     section::before {
 
@@ -787,7 +756,6 @@
         sectionShine 8s linear infinite;
     }
 
-
     section:hover {
 
       border-color:
@@ -797,7 +765,6 @@
         0 15px 60px
         rgba(0,0,0,.18);
     }
-
 
     @keyframes sectionShine {
 
@@ -811,7 +778,6 @@
           translateX(250%);
       }
     }
-
 
     /* =========================================================
        HEADINGS
@@ -838,7 +804,6 @@
         12px;
     }
 
-
     h2::before {
 
       content:
@@ -864,7 +829,6 @@
         rgba(212,175,55,.45);
     }
 
-
     p {
 
       color:
@@ -877,18 +841,16 @@
         1.02rem;
     }
 
-
     strong {
       color:
         var(--text);
     }
 
-
     /* =========================================================
        ENGINE MAVIS
        ========================================================= */
 
-    .engine-visual {
+   .engine-visual {
 
       width:
         180px;
@@ -924,8 +886,7 @@
         center;
     }
 
-
-    .ring {
+   .ring {
 
       position:
         absolute;
@@ -937,8 +898,7 @@
         2px solid transparent;
     }
 
-
-    .ring1 {
+   .ring1 {
 
       width:
         100%;
@@ -956,8 +916,7 @@
         spin 8s linear infinite;
     }
 
-
-    .ring2 {
+   .ring2 {
 
       width:
         75%;
@@ -975,8 +934,7 @@
         spin 5.5s linear infinite reverse;
     }
 
-
-    .ring3 {
+   .ring3 {
 
       width:
         48%;
@@ -994,8 +952,7 @@
         spin 3.8s linear infinite;
     }
 
-
-    .core {
+   .core {
 
       width:
         28%;
@@ -1025,7 +982,6 @@
         pulseCore 2.2s ease-in-out infinite;
     }
 
-
     @keyframes spin {
 
       to {
@@ -1033,7 +989,6 @@
           rotate(360deg);
       }
     }
-
 
     @keyframes pulseCore {
 
@@ -1053,16 +1008,15 @@
           scale(.86);
 
         opacity:
-          .78;
+         .78;
       }
     }
-
 
     /* =========================================================
        ENGINE BOX
        ========================================================= */
 
-    .engine-box {
+   .engine-box {
 
       background:
         linear-gradient(
@@ -1082,8 +1036,7 @@
         22px;
     }
 
-
-    .engine-top {
+   .engine-top {
 
       display:
         flex;
@@ -1104,8 +1057,7 @@
         10px;
     }
 
-
-    .engine-live {
+   .engine-live {
 
       display:
         flex;
@@ -1117,14 +1069,13 @@
         10px;
 
       color:
-        var(--gold-light);
+        var(--teal);
 
       font-weight:
         600;
     }
 
-
-    .dot-gold {
+   .dot {
 
       width:
         9px;
@@ -1133,19 +1084,18 @@
         9px;
 
       background:
-        var(--gold-light);
+        var(--green);
 
       border-radius:
         50%;
 
       box-shadow:
         0 0 12px
-        var(--gold-light);
+        var(--green);
 
       animation:
         pulse 1.5s infinite;
     }
-
 
     @keyframes pulse {
 
@@ -1157,91 +1107,19 @@
 
       50% {
         opacity:
-          .35;
+         .35;
       }
     }
 
-
     /* =========================================================
-       METRICS
+       METRICS - REMOVED FOR COMING SOON
        ========================================================= */
-
-    .metrics {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(120px,1fr)
-        );
-
-      gap:
-        12px;
-    }
-
-
-    .metric {
-
-      background:
-        rgba(0,0,0,.28);
-
-      border-radius:
-        11px;
-
-      padding:
-        14px 10px;
-
-      text-align:
-        center;
-
-      border:
-        1px solid
-        rgba(255,255,255,.035);
-    }
-
-
-    .metric-value {
-
-      font-size:
-        1.2rem;
-
-      font-weight:
-        700;
-
-      color:
-        var(--gold-light);
-
-      margin-bottom:
-        3px;
-
-      font-variant-numeric:
-        tabular-nums;
-    }
-
-
-    .metric-label {
-
-      font-size:
-        .72rem;
-
-      color:
-        var(--muted);
-
-      text-transform:
-        uppercase;
-
-      letter-spacing:
-        .4px;
-    }
-
 
     /* =========================================================
        ROADMAP
        ========================================================= */
 
-    .stage {
+   .stage {
 
       margin-bottom:
         24px;
@@ -1254,8 +1132,7 @@
         rgba(0,194,199,.35);
     }
 
-
-    .stage h3 {
+   .stage h3 {
 
       color:
         var(--teal);
@@ -1267,8 +1144,7 @@
         5px;
     }
 
-
-    .stage em {
+   .stage em {
 
       color:
         var(--gold-light);
@@ -1277,11 +1153,10 @@
         normal;
 
       font-size:
-        .92rem;
+       .92rem;
     }
 
-
-    .journey {
+   .journey {
 
       text-align:
         center;
@@ -1321,7 +1196,6 @@
         journeyGlow 4s ease-in-out infinite alternate;
     }
 
-
     @keyframes journeyGlow {
 
       from {
@@ -1337,56 +1211,9 @@
       }
     }
 
-
     /* =========================================================
        TOKENOMICS
        ========================================================= */
-
-    .tokenomics-grid {
-
-      display:
-        grid;
-
-      gap:
-        14px;
-
-      margin:
-        20px 0;
-
-    }
-
-
-    .token-card {
-
-      background:
-        rgba(0, 0, 0, 0.3);
-
-      border:
-        1px solid
-        rgba(0, 194, 199, 0.18);
-
-      border-radius:
-        12px;
-
-      padding:
-        16px;
-
-    }
-
-
-    .token-card h4 {
-
-      color:
-        var(--teal);
-
-      font-size:
-        1rem;
-
-      margin-bottom:
-        6px;
-
-    }
-
 
     #tokenomics-content {
 
@@ -1397,16 +1224,14 @@
         20px;
     }
 
-
     #tokenomics-content.show {
 
       display:
         block;
 
       animation:
-        fadeIn .4s ease;
+        fadeIn.4s ease;
     }
-
 
     @keyframes fadeIn {
 
@@ -1429,18 +1254,16 @@
       }
     }
 
-
-    .token-list {
+   .token-list {
 
       list-style:
         none;
     }
 
-
-    .token-list li {
+   .token-list li {
 
       padding:
-        14px 0;
+        11px 0;
 
       border-bottom:
         1px solid
@@ -1449,58 +1272,27 @@
       display:
         flex;
 
-      flex-direction:
-        column;
+      justify-content:
+        space-between;
 
       gap:
-        4px;
+        20px;
     }
 
-
-    .token-list li:last-child {
+   .token-list li:last-child {
 
       border-bottom:
         none;
     }
 
-
-    .token-row-top {
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      font-weight:
-        600;
-
-    }
-
-
-    .token-desc {
-
-      font-size:
-        .85rem;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.4;
-
-    }
-
-
-    .pct {
+   .pct {
 
       color:
         var(--gold-light);
 
       font-weight:
-        700;
+        600;
     }
-
 
     /* =========================================================
        FOOTER
@@ -1518,11 +1310,10 @@
         var(--muted);
 
       font-size:
-        .9rem;
+       .9rem;
     }
 
-
-    footer .brand {
+    footer.brand {
 
       color:
         var(--gold-light);
@@ -1533,7 +1324,6 @@
       margin-bottom:
         6px;
     }
-
 
     /* =========================================================
        MOBILE
@@ -1546,8 +1336,7 @@
           26px 18px;
       }
 
-
-      .logo-container {
+     .logo-container {
 
         width:
           145px;
@@ -1556,27 +1345,24 @@
           145px;
       }
 
-
       h1 {
         letter-spacing:
           4px;
       }
 
-
-      .tagline {
+     .tagline {
 
         font-size:
-          .86rem;
+         .86rem;
 
         letter-spacing:
           2px;
       }
 
-
-      .token-list li {
+     .token-list li {
 
         font-size:
-          .92rem;
+         .92rem;
       }
 
     }
@@ -1584,9 +1370,7 @@
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =======================================================
        ANIMATED BACKGROUND
@@ -1604,20 +1388,17 @@
 
   <div class="gold-grid"></div>
 
-
   <!-- =======================================================
        WEBSITE
-       ========================================================= -->
+       ======================================================= -->
 
   <div class="container">
-
 
     <!-- =====================================================
          HERO
          ===================================================== -->
 
     <header>
-
 
       <!-- ACTUAL PORTIVA LOGO -->
 
@@ -1631,16 +1412,13 @@
 
       </div>
 
-
       <h1>
         PORTIVA
       </h1>
 
-
       <div class="tagline">
         ACTIVITY · UTILITY · REWARDS
       </div>
-
 
       <p class="subtitle">
 
@@ -1651,31 +1429,29 @@
 
       </p>
 
-
       <div class="buttons">
 
-
         <a
-          href="#"
+          href="https://discord.gg/PBQQRvukd"
+          target="_blank"
+          rel="noopener"
           class="btn btn-primary"
         >
           Join Discord
         </a>
 
-
         <a
-          href="#"
+          href="https://x.com/Portiva_hq"
+          target="_blank"
+          rel="noopener"
           class="btn btn-secondary"
         >
           Follow on X
         </a>
 
-
       </div>
 
     </header>
-
-
 
     <!-- =====================================================
          WHAT IS PORTIVA
@@ -1687,11 +1463,9 @@
         What is Portiva?
       </h2>
 
-
       <p>
         Portiva is not just another token.
       </p>
-
 
       <p>
 
@@ -1702,7 +1476,6 @@
         built to reward real participation.
 
       </p>
-
 
       <p>
 
@@ -1716,10 +1489,8 @@
 
     </section>
 
-
-
     <!-- =====================================================
-         ENGINE MAVIS
+         ENGINE MAVIS - COMING SOON
          ===================================================== -->
 
     <section>
@@ -1727,7 +1498,6 @@
       <h2>
         Engine Mavis
       </h2>
-
 
       <p>
 
@@ -1737,127 +1507,68 @@
           Engine Mavis
         </strong>
 
-        — the state-calculation and transaction verification framework powering the ecosystem.
+        — the system that calculates
+        and tracks every transaction
+        across the ecosystem.
 
       </p>
-
 
       <p>
 
-        Engine Mavis will officially go live once the token is latticed and core tokenomics are fully integrated on-chain. Once active, preps and participants will gain real-time visibility into live transaction streaming, transparent contact address verification, and cryptographic state mapping directly from the network core.
+        Every meaningful action is
+        recorded and measured.
+
+        This creates transparency,
+        accountability, and a foundation
+        for fair rewards as the ecosystem grows.
 
       </p>
 
+      <!-- ENGINE STATUS - COMING SOON -->
 
-      <!-- ENGINE ANIMATION -->
+      <div class="engine-box" style="text-align:center; margin-top:26px;">
 
-      <div class="engine-visual">
+        <div class="engine-top" style="justify-content:center;">
 
-        <div class="ring ring1"></div>
+          <div class="engine-live" style="color:var(--gold-light);">
 
-        <div class="ring ring2"></div>
+            <span class="dot" style="background:var(--gold); box-shadow:0 0 12px var(--gold);"></span>
 
-        <div class="ring ring3"></div>
-
-        <div class="core"></div>
-
-      </div>
-
-
-      <!-- ENGINE STATUS -->
-
-      <div class="engine-box">
-
-
-        <div class="engine-top">
-
-
-          <div class="engine-live">
-
-            <span class="dot-gold"></span>
-
-            Engine Mavis — Initializing Phase
+            Engine Mavis — Coming Soon
 
           </div>
-
-
-          <div
-            style="
-              font-size:.85rem;
-              color:var(--muted);
-            "
-          >
-
-            Status: Pending Token Latticing
-
-          </div>
-
 
         </div>
 
+        <!-- ENGINE ANIMATION DIMMED -->
 
-        <div class="metrics">
+        <div class="engine-visual" style="opacity:0.4;">
 
+          <div class="ring ring1"></div>
 
-          <div class="metric">
+          <div class="ring ring2"></div>
 
-            <div class="metric-value">
-              STANDBY
-            </div>
+          <div class="ring ring3"></div>
 
-            <div class="metric-label">
-              Live Feed
-            </div>
+          <div class="core" style="opacity:0.6;"></div>
 
+        </div>
+
+        <div style="padding:18px; background:rgba(0,0,0,.32); border-radius:11px; border:1px dashed rgba(212,175,55,.35); max-width:420px; margin:0 auto;">
+
+          <div style="color:var(--gold-light); font-weight:800; letter-spacing:4px; font-size:1.15rem; margin-bottom:8px;">
+            COMING SOON
           </div>
 
-
-          <div class="metric">
-
-            <div class="metric-value">
-              OPTIONAL
-            </div>
-
-            <div class="metric-label">
-              Contract State
-            </div>
-
+          <div style="color:var(--muted); font-size:.92rem; line-height:1.5;">
+            Tracking and rewards activation pending.<br>Engine will go live with Stage 3.
           </div>
-
-
-          <div class="metric">
-
-            <div class="metric-value">
-              PRE-LAUNCH
-            </div>
-
-            <div class="metric-label">
-              Engine Status
-            </div>
-
-          </div>
-
-
-          <div class="metric">
-
-            <div class="metric-value">
-              LATTICING
-            </div>
-
-            <div class="metric-label">
-              Integration State
-            </div>
-
-          </div>
-
 
         </div>
 
       </div>
 
     </section>
-
-
 
     <!-- =====================================================
          ROADMAP
@@ -1868,7 +1579,6 @@
       <h2>
         Roadmap
       </h2>
-
 
       <div class="stage">
 
@@ -1891,7 +1601,6 @@
         </em>
 
       </div>
-
 
       <div class="stage">
 
@@ -1918,7 +1627,6 @@
 
       </div>
 
-
       <div class="stage">
 
         <h3>
@@ -1942,7 +1650,6 @@
         </em>
 
       </div>
-
 
       <div class="stage">
 
@@ -1968,7 +1675,6 @@
 
       </div>
 
-
       <div class="journey">
 
         BUILD
@@ -1985,51 +1691,23 @@
 
     </section>
 
-
-
     <!-- =====================================================
-         CRYPTOGRAPHIC TOKENOMICS
+         TOKENOMICS
          ===================================================== -->
 
     <section>
 
       <h2>
-        Cryptographic Architecture & Tokenomics
+        Tokenomics
       </h2>
-
 
       <p>
 
-        The Portiva token ecosystem relies on an algorithmic distribution framework designed to ensure game-theoretic alignment, cryptographic transparency, and sustained economic equilibrium. The core state mechanism employs a deterministic allocation topology combined with non-custodial cryptographic lockup primitives.
+        Transparent allocation designed
+        for long-term alignment and
+        future rewards.
 
       </p>
-
-
-      <div class="tokenomics-grid">
-
-        <div class="token-card">
-          <h4>Deterministic State Verification</h4>
-          <p style="font-size: 0.88rem; margin: 0;">
-            Engine Mavis evaluates user participation and rewards distribution using verifiable execution pathways, preventing state manipulation and guaranteeing ledger integrity across all network nodes.
-          </p>
-        </div>
-
-        <div class="token-card">
-          <h4>Automated Liquidity Latticing</h4>
-          <p style="font-size: 0.88rem; margin: 0;">
-            Initial pool liquidity is bound via non-custodial, time-locked smart contracts featuring immutable execution parameters to establish a robust decentralized market depth.
-          </p>
-        </div>
-
-        <div class="token-card">
-          <h4>Algorithmic Sink & Fee Mechanics</h4>
-          <p style="font-size: 0.88rem; margin: 0;">
-            Transaction volume metrics feed into dynamic incentive structures, utilizing automated protocol sink channels designed to prioritize long-term ecosystem participants over speculative actors.
-          </p>
-        </div>
-
-      </div>
-
 
       <div
         style="
@@ -2043,11 +1721,10 @@
           onclick="toggleTokenomics()"
           id="tokenBtn"
         >
-          View Full Cryptographic Distribution
+          View Full Tokenomics
         </button>
 
       </div>
-
 
       <div
         id="tokenomics-content"
@@ -2055,92 +1732,95 @@
 
         <ul class="token-list">
 
-
           <li>
-            <div class="token-row-top">
-              <span>Max Cryptographic Supply (Hard Cap)</span>
-              <span class="pct">1,000,000,000 $PORT</span>
-            </div>
-            <div class="token-desc">
-              Immutable base supply limit enforced at the smart contract level with zero minting capabilities post-deployment.
-            </div>
+
+            <span>
+              Total Supply
+            </span>
+
+            <span class="pct">
+              1,000,000,000
+            </span>
+
           </li>
 
-
           <li>
-            <div class="token-row-top">
-              <span>Decentralized Community / Fair Launch</span>
-              <span class="pct">72%</span>
-            </div>
-            <div class="token-desc">
-              Broad public distribution engineered to maximize decentralization, community governance spread, and organic network ownership.
-            </div>
+
+            <span>
+              Community / Fair Launch
+            </span>
+
+            <span class="pct">
+              72%
+            </span>
+
           </li>
 
-
           <li>
-            <div class="token-row-top">
-              <span>Proof-of-Activity & Dynamic Rewards Pool</span>
-              <span class="pct">10%</span>
-            </div>
-            <div class="token-desc">
-              Programmatic reward allocation streaming through Engine Mavis to incentivize active engagement, node validation, and ecosystem participation.
-            </div>
+
+            <span>
+              Future Rewards & Incentives
+            </span>
+
+            <span class="pct">
+              10%
+            </span>
+
           </li>
 
-
           <li>
-            <div class="token-row-top">
-              <span>Immutable Automated Market Maker Liquidity</span>
-              <span class="pct">10%</span>
-            </div>
-            <div class="token-desc">
-              Cryptographically locked in decentralized liquidity pools to preserve market stability, continuous swapping efficiency, and slippage reduction.
-            </div>
+
+            <span>
+              Liquidity (Locked)
+            </span>
+
+            <span class="pct">
+              10%
+            </span>
+
           </li>
 
-
           <li>
-            <div class="token-row-top">
-              <span>Decentralized Autonomous Organization (DAO) Treasury</span>
-              <span class="pct">5%</span>
-            </div>
-            <div class="token-desc">
-              Multisig vault governed by community consensus to finance strategic protocol upgrades, audits, partnerships, and liquidity expansion.
-            </div>
+
+            <span>
+              Community Treasury
+            </span>
+
+            <span class="pct">
+              5%
+            </span>
+
           </li>
 
-
           <li>
-            <div class="token-row-top">
-              <span>Core Contributors (12-Month Cryptographic Lock)</span>
-              <span class="pct">3%</span>
-            </div>
-            <div class="token-desc">
-              Allocated to founding developers with a mandatory 12-month linear vesting smart contract to guarantee multi-year alignment.
-            </div>
-          </li>
 
+            <span>
+              Team (Locked 12 months)
+            </span>
+
+            <span class="pct">
+              3%
+            </span>
+
+          </li>
 
         </ul>
 
-
         <p
           style="
-            margin-top:18px;
-            font-size: 0.9rem;
+            margin-top:16px;
           "
         >
 
-          All tokenomics primitives are cryptographically locked and governed by deterministically verifiable execution pathways.
+          Transparent. Locked.
+          Built for long-term alignment
+          and future rewards.
 
         </p>
 
       </div>
 
     </section>
-
-
 
     <!-- =====================================================
          JOIN SYSTEM
@@ -2160,7 +1840,6 @@
         Join the System
       </h2>
 
-
       <p>
 
         Don’t just watch Portiva.
@@ -2172,7 +1851,6 @@
 
       </p>
 
-
       <div
         class="buttons"
         style="
@@ -2180,28 +1858,27 @@
         "
       >
 
-
         <a
-          href="#"
+          href="https://discord.gg/PBQQRvukd"
+          target="_blank"
+          rel="noopener"
           class="btn btn-primary"
         >
           Join Discord
         </a>
 
-
         <a
-          href="#"
+          href="https://x.com/Portiva_hq"
+          target="_blank"
+          rel="noopener"
           class="btn btn-secondary"
         >
           Follow on X
         </a>
 
-
       </div>
 
     </section>
-
-
 
     <!-- =====================================================
          FOOTER
@@ -2216,24 +1893,19 @@
 
       </div>
 
-
       <div>
         © 2026 Portiva
       </div>
 
     </footer>
 
-
   </div>
-
-
 
   <!-- =======================================================
        JAVASCRIPT
        ======================================================= -->
 
   <script>
-
 
     /* =======================================================
        GOLD PARTICLE NETWORK
@@ -2247,21 +1919,17 @@
     const ctx =
       canvas.getContext("2d");
 
-
     let particles = [];
 
     let width = 0;
 
     let height = 0;
 
-
     const dpr =
       Math.min(
         window.devicePixelRatio || 1,
         2
       );
-
-
 
     /* =======================================================
        RESIZE
@@ -2275,20 +1943,17 @@
       height =
         window.innerHeight;
 
-
       canvas.width =
         width * dpr;
 
       canvas.height =
         height * dpr;
 
-
       canvas.style.width =
         width + "px";
 
       canvas.style.height =
         height + "px";
-
 
       ctx.setTransform(
         dpr,
@@ -2298,7 +1963,6 @@
         0,
         0
       );
-
 
       const target =
         Math.min(
@@ -2311,7 +1975,6 @@
           )
         );
 
-
       while (
         particles.length < target
       ) {
@@ -2321,7 +1984,6 @@
         );
 
       }
-
 
       if (
         particles.length > target
@@ -2333,8 +1995,6 @@
       }
 
     }
-
-
 
     /* =======================================================
        PARTICLE CREATION
@@ -2388,8 +2048,6 @@
 
     }
 
-
-
     /* =======================================================
        ANIMATE PARTICLES
        ======================================================= */
@@ -2403,7 +2061,6 @@
         height
       );
 
-
       /* Particles */
 
       for (
@@ -2416,7 +2073,6 @@
 
         p.phase += p.speed;
 
-
         /* Wrap around */
 
         if (
@@ -2426,7 +2082,6 @@
             width + 20;
         }
 
-
         if (
           p.x >
           width + 20
@@ -2435,14 +2090,12 @@
             -20;
         }
 
-
         if (
           p.y < -20
         ) {
           p.y =
             height + 20;
         }
-
 
         if (
           p.y >
@@ -2451,7 +2104,6 @@
           p.y =
             -20;
         }
-
 
         /* Pulse */
 
@@ -2462,20 +2114,16 @@
           ) *
           0.45;
 
-
         const alpha =
           p.alpha *
           pulse;
 
-
         const color =
           p.gold
-            ? "255,215,100"
+           ? "255,215,100"
             : "0,213,217";
 
-
         ctx.beginPath();
-
 
         ctx.arc(
 
@@ -2495,19 +2143,16 @@
 
         );
 
-
         ctx.fillStyle =
           `rgba(
             ${color},
             ${alpha}
           )`;
 
-
         ctx.shadowBlur =
           p.r > 1.5
-            ? 12
+           ? 12
             : 5;
-
 
         ctx.shadowColor =
           `rgba(
@@ -2515,15 +2160,11 @@
             ${alpha}
           )`;
 
-
         ctx.fill();
 
       }
 
-
       ctx.shadowBlur = 0;
-
-
 
       /* Connect particles */
 
@@ -2545,20 +2186,17 @@
           const b =
             particles[j];
 
-
           const dx =
             a.x - b.x;
 
           const dy =
             a.y - b.y;
 
-
           const distance =
             Math.sqrt(
               dx * dx +
               dy * dy
             );
-
 
           if (
             distance < 125
@@ -2571,21 +2209,17 @@
               ) *
               0.10;
 
-
             ctx.beginPath();
-
 
             ctx.moveTo(
               a.x,
               a.y
             );
 
-
             ctx.lineTo(
               b.x,
               b.y
             );
-
 
             ctx.strokeStyle =
               `rgba(
@@ -2595,10 +2229,8 @@
                 ${opacity}
               )`;
 
-
             ctx.lineWidth =
               0.55;
-
 
             ctx.stroke();
 
@@ -2608,25 +2240,20 @@
 
       }
 
-
       requestAnimationFrame(
         animateParticles
       );
 
     }
 
-
     window.addEventListener(
       "resize",
       resizeCanvas
     );
 
-
     resizeCanvas();
 
     animateParticles();
-
-
 
     /* =======================================================
        TOKENOMICS TOGGLE
@@ -2639,12 +2266,10 @@
           "tokenomics-content"
         );
 
-
       const button =
         document.getElementById(
           "tokenBtn"
         );
-
 
       if (
         content.classList.contains(
@@ -2656,9 +2281,8 @@
           "show"
         );
 
-
         button.textContent =
-          "View Full Cryptographic Distribution";
+          "View Full Tokenomics";
 
       }
 
@@ -2668,9 +2292,8 @@
           "show"
         );
 
-
         button.textContent =
-          "Hide Cryptographic Distribution";
+          "Hide Tokenomics";
 
       }
 
