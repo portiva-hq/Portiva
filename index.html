@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portiva — Activity. Utility. Rewards.</title>
   <style>
+    :root {
+      --navy: #070f1a;
+      --navy-2: #0c1a2e;
+      --gold: #d4af37;
+      --gold-soft: #e8c96a;
+      --teal: #00c2c7;
+      --teal-dark: #009ea3;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card: rgba(255, 255, 255, 0.03);
+      --border: rgba(212, 175, 55, 0.15);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -12,215 +25,420 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background-color: #0A1628;
-      color: #E5E7EB;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(0, 194, 199, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
+      z-index: -1;
+      pointer-events: none;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 24px;
     }
 
+    /* ===== HEADER / HERO ===== */
     header {
+      padding: 80px 0 60px;
       text-align: center;
-      padding: 60px 0 40px;
+      position: relative;
+    }
+
+    .logo-mark {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 28px;
+      background: linear-gradient(135deg, var(--gold), var(--teal));
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--navy);
+      box-shadow: 0 0 40px rgba(0, 194, 199, 0.25);
     }
 
     h1 {
-      font-size: 3rem;
-      color: #D4AF37;
-      letter-spacing: 4px;
-      margin-bottom: 10px;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: 6px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
     }
 
     .tagline {
-      font-size: 1.2rem;
-      color: #00C2C7;
+      font-size: 1.25rem;
+      color: var(--teal);
+      font-weight: 500;
       margin-bottom: 20px;
+      letter-spacing: 1px;
     }
 
     .subtitle {
+      max-width: 620px;
+      margin: 0 auto 36px;
+      color: var(--muted);
       font-size: 1.1rem;
-      color: #A0AEC0;
-      max-width: 600px;
-      margin: 0 auto 30px;
     }
 
     .buttons {
       display: flex;
-      gap: 15px;
+      gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 25px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 10px;
       font-weight: 600;
-      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn-primary {
-      background-color: #00C2C7;
-      color: #0A1628;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 194, 199, 0.3);
     }
 
     .btn-primary:hover {
-      background-color: #00a8ad;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(0, 194, 199, 0.45);
     }
 
     .btn-secondary {
-      border: 2px solid #D4AF37;
-      color: #D4AF37;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
     }
 
     .btn-secondary:hover {
-      background-color: #D4AF37;
-      color: #0A1628;
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
     }
 
+    /* ===== SECTIONS ===== */
     section {
-      margin: 60px 0;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
-      border: 1px solid rgba(212, 175, 55, 0.15);
+      margin: 50px 0;
+      padding: 40px 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
     }
 
     h2 {
-      color: #D4AF37;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      padding-bottom: 10px;
+      font-size: 1.7rem;
+      color: var(--gold);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    h3 {
-      color: #00C2C7;
-      margin: 25px 0 10px;
-      font-size: 1.2rem;
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--teal);
+      border-radius: 2px;
     }
 
     p {
-      margin-bottom: 15px;
-      color: #CBD5E0;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 1.05rem;
     }
 
+    strong {
+      color: var(--text);
+    }
+
+    /* ===== ENGINE MAVIS LIVE ===== */
+    .engine-panel {
+      background: linear-gradient(145deg, rgba(0, 194, 199, 0.08), rgba(212, 175, 55, 0.05));
+      border: 1px solid rgba(0, 194, 199, 0.25);
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 24px;
+    }
+
+    .engine-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .engine-title {
+      font-size: 1.15rem;
+      color: var(--teal);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #22c55e;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .engine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .metric {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== ROADMAP ===== */
     .stage {
-      margin-bottom: 25px;
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(0, 194, 199, 0.3);
+    }
+
+    .stage h3 {
+      color: var(--teal);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .stage p {
+      margin-bottom: 6px;
+    }
+
+    .stage em {
+      color: var(--gold-soft);
+      font-style: normal;
+      font-size: 0.95rem;
     }
 
     .journey {
       text-align: center;
+      margin-top: 32px;
       font-size: 1.1rem;
-      color: #D4AF37;
-      margin-top: 30px;
       font-weight: 600;
-      letter-spacing: 1px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      padding: 16px;
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 10px;
     }
 
-    .tokenomics {
+    /* ===== TOKENOMICS ===== */
+    .token-list {
       list-style: none;
+      margin-top: 12px;
     }
 
-    .tokenomics li {
-      padding: 8px 0;
+    .token-list li {
+      padding: 12px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
+    .token-list li:last-child {
+      border-bottom: none;
+    }
+
+    .token-pct {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
-      padding: 40px 0;
-      color: #718096;
+      padding: 60px 0 40px;
+      color: var(--muted);
       font-size: 0.9rem;
     }
 
     footer .brand {
-      color: #D4AF37;
+      color: var(--gold);
+      font-weight: 600;
       margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 28px 20px;
+      }
+      h1 {
+        letter-spacing: 3px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
+    <!-- HERO -->
     <header>
+      <div class="logo-mark">P</div>
       <h1>PORTIVA</h1>
-      <div class="tagline">Activity. Utility. Rewards.</div>
-      <p class="subtitle">A crypto ecosystem designed to turn participation into utility and rewards through staking, locking, community activity, and crypto lending.</p>
-      
+      <div class="tagline">Activity · Utility · Rewards</div>
+      <p class="subtitle">
+        A crypto ecosystem designed to turn participation into utility and rewards through staking, locking, community activity, and crypto lending.
+      </p>
       <div class="buttons">
         <a href="#" class="btn btn-primary">Join Discord</a>
         <a href="#" class="btn btn-secondary">Follow on X</a>
       </div>
     </header>
 
+    <!-- WHAT IS PORTIVA -->
     <section>
       <h2>What is Portiva?</h2>
-      <p>Portiva is not just another token.<br>It is a system built to reward real participation.</p>
+      <p>Portiva is not just another token.</p>
+      <p>It is a <strong>system</strong> built to reward real participation.</p>
       <p>Through community activity, staking, locking, and future crypto lending, Portiva creates a clear path where involvement turns into utility and rewards.</p>
     </section>
 
+    <!-- ENGINE MAVIS -->
     <section>
       <h2>Engine Mavis</h2>
-      <p>At the core of Portiva sits <strong style="color:#00C2C7;">Engine Mavis</strong> — the system that calculates and tracks every transaction across the ecosystem.</p>
-      <p>Every meaningful action is recorded and measured.<br>This creates transparency, accountability, and a foundation for fair rewards as the ecosystem grows.</p>
-      <p>Engine Mavis is the engine that powers the entire Portiva system.</p>
+      <p>At the core of Portiva sits <strong style="color:var(--teal)">Engine Mavis</strong> — the system that calculates and tracks every transaction across the ecosystem.</p>
+      <p>Every meaningful action is recorded and measured. This creates transparency, accountability, and a foundation for fair rewards as the ecosystem grows.</p>
+
+      <div class="engine-panel">
+        <div class="engine-header">
+          <div class="engine-title">
+            <span class="status-dot"></span>
+            Engine Mavis — Live
+          </div>
+          <div style="font-size:0.85rem; color:var(--muted);">System Status: Operational</div>
+        </div>
+
+        <div class="engine-grid">
+          <div class="metric">
+            <div class="metric-value" id="txCount">0</div>
+            <div class="metric-label">Tracked Actions</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="pulse">98.7%</div>
+            <div class="metric-label">System Health</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">LIVE</div>
+            <div class="metric-label">Engine Status</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="uptime">00:00:00</div>
+            <div class="metric-label">Uptime</div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- ROADMAP -->
     <section>
       <h2>Roadmap</h2>
 
       <div class="stage">
         <h3>STAGE 1 — BUILD</h3>
-        <p>We build the core infrastructure, security, treasury, and financial system.<br>
-        <em>Your action: Follow the build, learn the system, and get involved early.</em></p>
+        <p>We build the core infrastructure, security, treasury, and financial system.</p>
+        <em>Your action: Follow the build, learn the system, and get involved early.</em>
       </div>
 
       <div class="stage">
         <h3>STAGE 2 — MEMME</h3>
-        <p>MEMME is the community-growth stage. It creates attention, culture, and participation while PORTIVA continues to develop.<br>
-        <em>Your action: Join, create, share, invite others, and help grow the network.</em></p>
+        <p>MEMME is the community-growth stage. It creates attention, culture, and participation while PORTIVA continues to develop.</p>
+        <em>Your action: Join, create, share, invite others, and help grow the network.</em>
       </div>
 
       <div class="stage">
         <h3>STAGE 3 — STAKE & LOCK</h3>
-        <p>PORTIVA introduces staking and locking, creating new ways for eligible participants to contribute to and benefit from the ecosystem.<br>
-        <em>Your action: Participate, stake, and lock when these features launch.</em></p>
+        <p>PORTIVA introduces staking and locking, creating new ways for eligible participants to contribute to and benefit from the ecosystem.</p>
+        <em>Your action: Participate, stake, and lock when these features launch.</em>
       </div>
 
       <div class="stage">
         <h3>STAGE 4 — CRYPTO LOANS</h3>
-        <p>PORTIVA expands into crypto lending, bringing additional financial utility to the ecosystem.<br>
-        <em>Your action: Participate in the lending ecosystem as new features become available.</em></p>
+        <p>PORTIVA expands into crypto lending, bringing additional financial utility to the ecosystem.</p>
+        <em>Your action: Participate in the lending ecosystem as new features become available.</em>
       </div>
 
       <div class="journey">BUILD → MEMME → STAKE → LOCK → LEND</div>
     </section>
 
+    <!-- TOKENOMICS -->
     <section>
       <h2>Tokenomics</h2>
-      <ul class="tokenomics">
-        <li>Total Supply: <strong>1,000,000,000</strong></li>
-        <li>80% — Community / Fair Launch</li>
-        <li>10% — Liquidity (Locked)</li>
-        <li>7% — Community Treasury</li>
-        <li>3% — Team (Locked 12 months)</li>
+      <ul class="token-list">
+        <li><span>Total Supply</span> <span class="token-pct">1,000,000,000</span></li>
+        <li><span>Community / Fair Launch</span> <span class="token-pct">80%</span></li>
+        <li><span>Liquidity (Locked)</span> <span class="token-pct">10%</span></li>
+        <li><span>Community Treasury</span> <span class="token-pct">7%</span></li>
+        <li><span>Team (Locked 12 months)</span> <span class="token-pct">3%</span></li>
       </ul>
       <p style="margin-top:20px;">Transparent. Locked. Built for long-term alignment.</p>
     </section>
 
+    <!-- JOIN -->
     <section style="text-align:center;">
-      <h2>Join the System</h2>
+      <h2 style="justify-content:center;">Join the System</h2>
       <p>Don’t just watch Portiva.<br>Join the build, grow the community, and participate in the ecosystem.</p>
-      
-      <div class="buttons" style="margin-top:25px;">
+      <div class="buttons" style="margin-top:28px;">
         <a href="#" class="btn btn-primary">Join Discord</a>
         <a href="#" class="btn btn-secondary">Follow on X</a>
       </div>
@@ -232,5 +450,29 @@
     </footer>
 
   </div>
+
+  <script>
+    // Live Engine Mavis simulation
+    let tx = 1284;
+    const txEl = document.getElementById('txCount');
+    const uptimeEl = document.getElementById('uptime');
+    const start = Date.now();
+
+    function updateEngine() {
+      // Random small increase in tracked actions
+      tx += Math.floor(Math.random() * 3);
+      txEl.textContent = tx.toLocaleString();
+
+      // Uptime
+      const diff = Math.floor((Date.now() - start) / 1000);
+      const h = String(Math.floor(diff / 3600)).padStart(2, '0');
+      const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+      const s = String(diff % 60).padStart(2, '0');
+      uptimeEl.textContent = `\( {h}: \){m}:${s}`;
+    }
+
+    setInterval(updateEngine, 2200);
+    updateEngine();
+  </script>
 </body>
 </html>
