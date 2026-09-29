@@ -23,7 +23,7 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
 
 /* NAV */
 .top{position:sticky;top:0;z-index:100;background:rgba(6,7,10,.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-.nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
 .logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:4px;color:var(--gold);font-size:1.15rem}
 .logo-mark{
   width:38px;height:38px;
@@ -49,29 +49,29 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
 .btn-white:hover{background:var(--gold)}
 
 /* HERO */
-.hero{max-width:1280px;margin:0 auto;padding:90px 24px 30px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;position:relative;z-index:2}
-.hero h1{font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:900;line-height:.9;letter-spacing:-2px}
+.hero{max-width:1280px;margin:0 auto;padding:90px 24px 40px;position:relative;z-index:2}
+.hero-content{max-width:720px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:18px}
 .hero h1 span{color:var(--gold);text-shadow:0 0 30px rgba(240,211,106,.35)}
-.hero-right{border-left:1px solid var(--border);padding-left:32px}
-.hero-right p{color:var(--muted);line-height:1.7;font-size:1.05rem}
-.cta{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
-.cta a{padding:12px 22px;border-radius:100px;text-decoration:none;font-weight:800;font-size:.9rem;transition:.2s}
+.hero p{color:var(--muted);font-size:1.15rem;line-height:1.7;max-width:560px;margin-bottom:32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.cta a{padding:13px 26px;border-radius:100px;text-decoration:none;font-weight:800;font-size:.95rem;transition:.2s}
 .primary{background:var(--gold);color:black;box-shadow:0 0 30px rgba(240,211,106,.3)}
 .primary:hover{transform:translateY(-1px);box-shadow:0 0 40px rgba(240,211,106,.5)}
 .secondary{background:transparent;border:1px solid var(--border);color:white}
 .secondary:hover{border-color:white}
 
-/* STATS */
-.stats{max-width:1280px;margin:30px auto 70px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2;backdrop-filter:blur(4px)}
+/* STATS - cleaned, no token numbers */
+.stats{max-width:1280px;margin:20px auto 60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
 .stats div{padding:20px 24px;border-right:1px solid var(--border)}
 .stats div:last-child{border:0}
 .stats b{display:block;font-size:1.1rem;color:white}
 .stats span{font-size:.75rem;letter-spacing:2px;color:var(--muted)}
 
 /* SECTIONS */
-.section{max-width:1280px;margin:80px auto;padding:0 24px;position:relative;z-index:2}
+.section{max-width:1280px;margin:70px auto;padding:0 24px;position:relative;z-index:2}
 .label{font-size:.7rem;letter-spacing:4px;color:var(--gold);margin-bottom:16px}
-.h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:20px}
+.h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-1px;margin-bottom:20px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .card{background:rgba(14,16,21,.85);border:1px solid var(--border);border-radius:16px;padding:24px;backdrop-filter:blur(10px);transition:.2s}
 .card:hover{border-color:rgba(240,211,106,.2);transform:translateY(-2px)}
@@ -90,6 +90,7 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
   justify-content:space-between;
   align-items:center;
   transition:.2s;
+  margin-bottom:8px;
 }
 .token-toggle:hover{border-color:var(--gold)}
 .token-content{display:none;margin-top:16px}
@@ -97,7 +98,7 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* MAVIS */
-.mavis{margin-top:28px;background:linear-gradient(180deg,rgba(18,20,27,.9),rgba(10,12,16,.95));border:1px solid var(--border-gold);border-radius:20px;overflow:hidden;position:relative;box-shadow:0 0 60px rgba(240,211,106,.08), inset 0 1px 0 rgba(255,255,255,.05)}
+.mavis{margin-top:28px;background:linear-gradient(180deg,rgba(18,20,27,.9),rgba(10,12,16,.95));border:1px solid var(--border-gold);border-radius:20px;overflow:hidden;position:relative;box-shadow:0 0 60px rgba(240,211,106,.08)}
 .mavis-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(240,211,106,.05)}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 10px #ff3b3b;animation:blink 1.2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
@@ -108,13 +109,11 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
 .console .gold{color:var(--gold);text-shadow:0 0 8px var(--gold)}
 .visual{padding:22px;display:flex;flex-direction:column;justify-content:center;gap:18px;align-items:center}
 
-/* Spinning Engine Mavis */
 .engine-visual{
   width:140px;height:140px;position:relative;
   border-radius:50%;
   background:radial-gradient(circle,rgba(0,230,224,.2) 0%,transparent 70%);
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:10px;
 }
 .ring{position:absolute;border-radius:50%;border:2px solid transparent}
 .ring1{width:100%;height:100%;border-top-color:var(--teal);border-right-color:var(--gold);animation:spin 8s linear infinite}
@@ -133,30 +132,17 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
 .chip span{font-size:.9rem;font-weight:700}
 .status-badge{display:inline-flex;align-items:center;gap:8px;border:1px dashed rgba(240,211,106,.35);padding:8px 14px;border-radius:100px;font-size:.7rem;letter-spacing:2px;color:var(--gold);background:rgba(240,211,106,.06)}
 
-/* DEXSCREENER FRAME */
-.chart-frame{
-  margin-top:24px;
-  border:1px solid var(--border-gold);
-  border-radius:16px;
-  overflow:hidden;
-  background:#0e1015;
-}
-.chart-header{
-  padding:14px 18px;
-  border-bottom:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:.85rem;color:var(--muted);
-}
+/* CHART */
+.chart-frame{margin-top:24px;border:1px solid var(--border-gold);border-radius:16px;overflow:hidden;background:#0e1015}
+.chart-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted)}
 .chart-header span{color:var(--gold)}
 
-footer{max-width:1280px;margin:80px auto 30px;padding:20px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem;position:relative;z-index:2}
+footer{max-width:1280px;margin:80px auto 30px;padding:20px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem}
 footer a{color:var(--muted);text-decoration:none;margin-left:14px}
 footer a:hover{color:var(--gold)}
 
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .hero-right{border-left:0;padding-left:0;border-top:1px solid var(--border);padding-top:20px}
-  .stats{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
   .mavis-body{grid-template-columns:1fr}
   .nav-links{display:none}
@@ -165,7 +151,7 @@ footer a:hover{color:var(--gold)}
 </head>
 <body>
 
-<!-- TOP NAV -->
+<!-- NAV -->
 <div class="top">
   <div class="nav">
     <div class="logo">
@@ -186,42 +172,37 @@ footer a:hover{color:var(--gold)}
         <div class="dd-menu">
           <a href="#tokenomics">Tokenomics</a>
           <a href="#roadmap">Roadmap</a>
-          <a>Memme Stage</a>
         </div>
       </div>
-      <a class="dd-trigger mono" href="https://x.com/Portiva_hq" target="_blank">X</a>
-      <a class="dd-trigger mono" href="https://www.tiktok.com/@portiva.hq" target="_blank">TikTok</a>
     </div>
     <div class="nav-right">
+      <a class="btn-ghost" href="https://x.com/Portiva_hq" target="_blank">X</a>
       <a class="btn-ghost" href="https://discord.gg/PBQQRvukd" target="_blank">Discord</a>
-      <a class="btn-white" href="https://discord.gg/PBQQRvukd" target="_blank">Join System</a>
+      <a class="btn-white" href="https://www.tiktok.com/@portiva.hq" target="_blank">TikTok</a>
     </div>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO - Floating writeup restored -->
 <div class="hero">
-  <div>
+  <div class="hero-content">
     <h1>PORTIVA<br><span>Activity. Utility. Rewards.</span></h1>
-  </div>
-  <div class="hero-right">
     <p>A crypto ecosystem built around participation, staking, locking & future lending.</p>
     <div class="cta">
-      <a class="primary" href="https://discord.gg/PBQQRvukd" target="_blank">ENTER SYSTEM</a>
+      <a class="primary" href="#mavis">ENTER SYSTEM</a>
       <a class="secondary" href="https://x.com/Portiva_hq" target="_blank">FOLLOW ON X</a>
     </div>
   </div>
 </div>
 
-<!-- STATS -->
+<!-- CLEAN STATS (no token numbers) -->
 <div class="stats mono">
-  <div><b>1,000,000,000</b><span>TOTAL SUPPLY</span></div>
-  <div><b>72% COMMUNITY</b><span>FAIR & TRANSPARENT</span></div>
   <div><b>ENGINE MAVIS</b><span>STANDBY MODE</span></div>
   <div><b>STAGE 2 LIVE</b><span>MEMME NOW</span></div>
+  <div><b>SYSTEM</b><span>BUILDING</span></div>
 </div>
 
-<!-- TOKENOMICS (DROPDOWN) -->
+<!-- TOKENOMICS - PURE DROPDOWN -->
 <div class="section" id="tokenomics">
   <div class="label mono">TOKENOMICS</div>
   <div class="h2">Built for sustainability.</div>
@@ -232,31 +213,31 @@ footer a:hover{color:var(--gold)}
   </div>
 
   <div class="token-content" id="tokenContent">
-    <div class="grid3" style="margin-top:8px">
+    <div class="grid3">
       <div class="card">
-        <div class="num mono">01 / COMMUNITY</div>
-        <h3>72% — Fair Launch & Rewards</h3>
-        <p>Community allocation for growth, staking, locking and long-term incentives.</p>
+        <div class="num mono">01</div>
+        <h3>72% — Community / Fair Launch</h3>
+        <p>For growth, staking, locking and long-term incentives.</p>
       </div>
       <div class="card">
-        <div class="num mono">02 / FUTURE REWARDS</div>
+        <div class="num mono">02</div>
         <h3>10% — Future Rewards</h3>
-        <p>Reserved for future incentives, ecosystem rewards and participation bonuses.</p>
+        <p>Reserved for future incentives and participation bonuses.</p>
       </div>
       <div class="card">
-        <div class="num mono">03 / LIQUIDITY</div>
+        <div class="num mono">03</div>
         <h3>10% — Liquidity (Locked)</h3>
-        <p>Locked liquidity to support healthy trading and system stability.</p>
+        <p>Locked liquidity for healthy trading and stability.</p>
       </div>
       <div class="card">
-        <div class="num mono">04 / TREASURY</div>
+        <div class="num mono">04</div>
         <h3>5% — Community Treasury</h3>
-        <p>For development, grants and ecosystem expansion.</p>
+        <p>Development, grants and ecosystem expansion.</p>
       </div>
       <div class="card">
-        <div class="num mono">05 / TEAM</div>
+        <div class="num mono">05</div>
         <h3>3% — Team (Locked 12 months)</h3>
-        <p>Long vesting, fully aligned with system growth.</p>
+        <p>Long vesting, aligned with system growth.</p>
       </div>
     </div>
   </div>
@@ -301,39 +282,33 @@ footer a:hover{color:var(--gold)}
         <line style="margin-top:16px;color:var(--muted)">> This machine will track every meaningful action for transparency and future rewards.</line>
       </div>
       <div class="visual">
-        <!-- Spinning Engine -->
         <div class="engine-visual">
           <div class="ring ring1"></div>
           <div class="ring ring2"></div>
           <div class="ring ring3"></div>
           <div class="core"></div>
         </div>
-
         <div class="power-bar"><div class="power-fill"></div></div>
         <div class="chips mono">
           <div class="chip"><b>CPU</b><span>MAVIS-01</span></div>
           <div class="chip"><b>MODE</b><span style="color:var(--gold)">STANDBY</span></div>
           <div class="chip"><b>SYNC</b><span style="color:var(--teal)">12%</span></div>
         </div>
-        <div style="font-size:.8rem;color:var(--muted);line-height:1.5;text-align:center" class="mono">
-          Engine Mavis is not tracking yet. When Stage 3 goes live, all participation will be logged transparently.
-        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- LIVE CHART FRAME -->
+<!-- LIVE CHART -->
 <div class="section">
   <div class="label mono">MARKET</div>
   <div class="h2">Live Chart</div>
   <div class="chart-frame">
     <div class="chart-header mono">
       <div>DEXSCREENER • LIVE</div>
-      <div><span>PORTIVA</span> / SOL</div>
+      <div><span>PORTIVA</span></div>
     </div>
-    <!-- Replace the src below with your real DexScreener embed when token is live -->
-    <div style="height:420px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem" class="mono">
+    <div style="height:380px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem" class="mono">
       Chart will appear here once the token is live on DexScreener
     </div>
   </div>
