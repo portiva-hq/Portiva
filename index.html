@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portiva HQ — Activity. Utility. Rewards.</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#06070a;
@@ -17,67 +18,326 @@
   --border:rgba(255,255,255,.08);
   --border-gold:rgba(240,211,106,.25);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden;position:relative}
-.mono{font-family:"JetBrains Mono",monospace}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
+  position:relative
+}
+
+.mono{
+  font-family:"JetBrains Mono",monospace
+}
 
 /* NAV */
-.top{position:sticky;top:0;z-index:100;background:rgba(6,7,10,.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-.nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:4px;color:var(--gold);font-size:1.15rem}
+.top{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(6,7,10,.85);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border)
+}
+
+.nav{
+  max-width:1280px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:var(--gold);
+  font-size:1.15rem
+}
+
 .logo-mark{
-  width:38px;height:38px;
+  width:38px;
+  height:38px;
   background:linear-gradient(145deg,var(--gold),var(--teal));
   border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;font-weight:900;color:#06070a;
-  box-shadow:0 0 20px rgba(0,230,224,.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:900;
+  color:#06070a;
+  box-shadow:0 0 20px rgba(0,230,224,.3)
 }
-.nav-links{display:flex;align-items:center;gap:28px}
-.dd{position:relative}
-.dd-trigger{color:var(--muted);font-size:.85rem;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.2s}
-.dd-trigger:hover{color:white}
-.dd-menu{position:absolute;top:36px;left:0;min-width:220px;background:#12141b;border:1px solid var(--border);border-radius:12px;padding:10px;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;box-shadow:0 20px 40px rgba(0,0,0,.6)}
-.dd:hover .dd-menu{opacity:1;pointer-events:auto;transform:translateY(0)}
-.dd-menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:.85rem}
-.dd-menu a:hover{background:rgba(255,255,255,.05);color:white}
-.nav-right{display:flex;gap:10px;align-items:center}
-.nav-right a{text-decoration:none;font-size:.85rem;padding:9px 18px;border-radius:100px;font-weight:700;transition:.2s}
-.btn-ghost{color:white;border:1px solid var(--border)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.btn-white{background:white;color:black}
-.btn-white:hover{background:var(--gold)}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px
+}
+
+.dd{
+  position:relative
+}
+
+.dd-trigger{
+  color:var(--muted);
+  font-size:.85rem;
+  letter-spacing:1px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:.2s
+}
+
+.dd-trigger:hover{
+  color:white
+}
+
+.dd-menu{
+  position:absolute;
+  top:36px;
+  left:0;
+  min-width:220px;
+  background:#12141b;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(8px);
+  transition:.2s;
+  box-shadow:0 20px 40px rgba(0,0,0,.6)
+}
+
+.dd:hover .dd-menu{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0)
+}
+
+.dd-menu a{
+  display:block;
+  padding:10px 12px;
+  border-radius:8px;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.85rem
+}
+
+.dd-menu a:hover{
+  background:rgba(255,255,255,.05);
+  color:white
+}
+
+.nav-right{
+  display:flex;
+  gap:10px;
+  align-items:center
+}
+
+.nav-right a{
+  text-decoration:none;
+  font-size:.85rem;
+  padding:9px 18px;
+  border-radius:100px;
+  font-weight:700;
+  transition:.2s
+}
+
+.btn-ghost{
+  color:white;
+  border:1px solid var(--border)
+}
+
+.btn-ghost:hover{
+  border-color:var(--gold);
+  color:var(--gold)
+}
+
+.btn-white{
+  background:white;
+  color:black
+}
+
+.btn-white:hover{
+  background:var(--gold)
+}
 
 /* HERO */
-.hero{max-width:1280px;margin:0 auto;padding:90px 24px 40px;position:relative;z-index:2}
-.hero-content{max-width:720px}
-.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:18px}
-.hero h1 span{color:var(--gold);text-shadow:0 0 30px rgba(240,211,106,.35)}
-.hero p{color:var(--muted);font-size:1.15rem;line-height:1.7;max-width:560px;margin-bottom:32px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.cta a{padding:13px 26px;border-radius:100px;text-decoration:none;font-weight:800;font-size:.95rem;transition:.2s}
-.primary{background:var(--gold);color:black;box-shadow:0 0 30px rgba(240,211,106,.3)}
-.primary:hover{transform:translateY(-1px);box-shadow:0 0 40px rgba(240,211,106,.5)}
-.secondary{background:transparent;border:1px solid var(--border);color:white}
-.secondary:hover{border-color:white}
+.hero{
+  max-width:1280px;
+  margin:0 auto;
+  padding:90px 24px 40px;
+  position:relative;
+  z-index:2
+}
 
-/* STATS - cleaned, no token numbers */
-.stats{max-width:1280px;margin:20px auto 60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
-.stats div{padding:20px 24px;border-right:1px solid var(--border)}
-.stats div:last-child{border:0}
-.stats b{display:block;font-size:1.1rem;color:white}
-.stats span{font-size:.75rem;letter-spacing:2px;color:var(--muted)}
+.hero-content{
+  max-width:720px
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,6vw,4.8rem);
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin-bottom:18px
+}
+
+.hero h1 span{
+  color:var(--gold);
+  text-shadow:0 0 30px rgba(240,211,106,.35)
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:1.15rem;
+  line-height:1.7;
+  max-width:560px;
+  margin-bottom:32px
+}
+
+.cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+
+.cta a{
+  padding:13px 26px;
+  border-radius:100px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:.95rem;
+  transition:.2s
+}
+
+.primary{
+  background:var(--gold);
+  color:black;
+  box-shadow:0 0 30px rgba(240,211,106,.3)
+}
+
+.primary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 0 40px rgba(240,211,106,.5)
+}
+
+.secondary{
+  background:transparent;
+  border:1px solid var(--border);
+  color:white
+}
+
+.secondary:hover{
+  border-color:white
+}
+
+/* STATS */
+.stats{
+  max-width:1280px;
+  margin:20px auto 60px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  position:relative;
+  z-index:2
+}
+
+.stats div{
+  padding:20px 24px;
+  border-right:1px solid var(--border)
+}
+
+.stats div:last-child{
+  border:0
+}
+
+.stats b{
+  display:block;
+  font-size:1.1rem;
+  color:white
+}
+
+.stats span{
+  font-size:.75rem;
+  letter-spacing:2px;
+  color:var(--muted)
+}
 
 /* SECTIONS */
-.section{max-width:1280px;margin:70px auto;padding:0 24px;position:relative;z-index:2}
-.label{font-size:.7rem;letter-spacing:4px;color:var(--gold);margin-bottom:16px}
-.h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-1px;margin-bottom:20px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:rgba(14,16,21,.85);border:1px solid var(--border);border-radius:16px;padding:24px;backdrop-filter:blur(10px);transition:.2s}
-.card:hover{border-color:rgba(240,211,106,.2);transform:translateY(-2px)}
-.card h3{margin-bottom:8px;font-size:1rem}
-.card p{color:var(--muted);font-size:.9rem;line-height:1.5}
-.card .num{font-size:.7rem;color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+.section{
+  max-width:1280px;
+  margin:70px auto;
+  padding:0 24px;
+  position:relative;
+  z-index:2
+}
+
+.label{
+  font-size:.7rem;
+  letter-spacing:4px;
+  color:var(--gold);
+  margin-bottom:16px
+}
+
+.h2{
+  font-size:clamp(1.8rem,4vw,2.5rem);
+  font-weight:800;
+  letter-spacing:-1px;
+  margin-bottom:20px
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px
+}
+
+.card{
+  background:rgba(14,16,21,.85);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  backdrop-filter:blur(10px);
+  transition:.2s
+}
+
+.card:hover{
+  border-color:rgba(240,211,106,.2);
+  transform:translateY(-2px)
+}
+
+.card h3{
+  margin-bottom:8px;
+  font-size:1rem
+}
+
+.card p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.5
+}
+
+.card .num{
+  font-size:.7rem;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:12px
+}
 
 /* TOKENOMICS DROPDOWN */
 .token-toggle{
@@ -90,246 +350,895 @@ body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflo
   justify-content:space-between;
   align-items:center;
   transition:.2s;
-  margin-bottom:8px;
+  margin-bottom:8px
 }
-.token-toggle:hover{border-color:var(--gold)}
-.token-content{display:none;margin-top:16px}
-.token-content.show{display:block;animation:fadeIn .35s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.token-toggle:hover{
+  border-color:var(--gold)
+}
+
+.token-content{
+  display:none;
+  margin-top:16px
+}
+
+.token-content.show{
+  display:block;
+  animation:fadeIn .35s ease
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(8px)
+  }
+  to{
+    opacity:1;
+    transform:translateY(0)
+  }
+}
 
 /* MAVIS */
-.mavis{margin-top:28px;background:linear-gradient(180deg,rgba(18,20,27,.9),rgba(10,12,16,.95));border:1px solid var(--border-gold);border-radius:20px;overflow:hidden;position:relative;box-shadow:0 0 60px rgba(240,211,106,.08)}
-.mavis-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(240,211,106,.05)}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 10px #ff3b3b;animation:blink 1.2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.mavis-body{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
-.console{padding:22px;background:rgba(8,10,14,.9);border-right:1px solid var(--border);min-height:280px}
-.console line{color:#3a4455;font-size:.78rem;line-height:1.9;display:block}
-.console .active{color:var(--teal);text-shadow:0 0 8px var(--teal)}
-.console .gold{color:var(--gold);text-shadow:0 0 8px var(--gold)}
-.visual{padding:22px;display:flex;flex-direction:column;justify-content:center;gap:18px;align-items:center}
+.mavis{
+  margin-top:28px;
+  background:linear-gradient(
+    180deg,
+    rgba(18,20,27,.9),
+    rgba(10,12,16,.95)
+  );
+  border:1px solid var(--border-gold);
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 0 60px rgba(240,211,106,.08)
+}
+
+.mavis-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 20px;
+  border-bottom:1px solid var(--border);
+  background:rgba(240,211,106,.05)
+}
+
+.dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ff3b3b;
+  box-shadow:0 0 10px #ff3b3b;
+  animation:blink 1.2s infinite
+}
+
+@keyframes blink{
+  0%,100%{
+    opacity:1
+  }
+  50%{
+    opacity:.25
+  }
+}
+
+.mavis-body{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:0
+}
+
+.console{
+  padding:22px;
+  background:rgba(8,10,14,.9);
+  border-right:1px solid var(--border);
+  min-height:280px
+}
+
+.console line{
+  color:#3a4455;
+  font-size:.78rem;
+  line-height:1.9;
+  display:block
+}
+
+.console .active{
+  color:var(--teal);
+  text-shadow:0 0 8px var(--teal)
+}
+
+.console .gold{
+  color:var(--gold);
+  text-shadow:0 0 8px var(--gold)
+}
+
+.visual{
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
+  align-items:center
+}
 
 .engine-visual{
-  width:140px;height:140px;position:relative;
+  width:140px;
+  height:140px;
+  position:relative;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(0,230,224,.2) 0%,transparent 70%);
-  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(
+    circle,
+    rgba(0,230,224,.2) 0%,
+    transparent 70%
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center
 }
-.ring{position:absolute;border-radius:50%;border:2px solid transparent}
-.ring1{width:100%;height:100%;border-top-color:var(--teal);border-right-color:var(--gold);animation:spin 8s linear infinite}
-.ring2{width:72%;height:72%;border-bottom-color:var(--teal);border-left-color:var(--gold);animation:spin 5.5s linear infinite reverse}
-.ring3{width:44%;height:44%;border-top-color:var(--gold);border-right-color:var(--teal);animation:spin 3.8s linear infinite}
-.core{width:26%;height:26%;background:linear-gradient(135deg,var(--teal),var(--gold));border-radius:50%;box-shadow:0 0 25px rgba(0,230,224,.55);animation:pulseCore 2.2s ease-in-out infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pulseCore{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.88);opacity:.75}}
 
-.power-bar{height:6px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden;width:100%}
-.power-fill{width:12%;height:100%;background:linear-gradient(90deg,var(--gold),var(--teal));box-shadow:0 0 20px var(--gold);animation:charge 3s ease-in-out infinite alternate}
-@keyframes charge{0%{width:12%}100%{width:18%}}
-.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
-.chip{border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;background:rgba(255,255,255,.02)}
-.chip b{display:block;font-size:.7rem;color:var(--muted);letter-spacing:2px;margin-bottom:6px}
-.chip span{font-size:.9rem;font-weight:700}
-.status-badge{display:inline-flex;align-items:center;gap:8px;border:1px dashed rgba(240,211,106,.35);padding:8px 14px;border-radius:100px;font-size:.7rem;letter-spacing:2px;color:var(--gold);background:rgba(240,211,106,.06)}
+.ring{
+  position:absolute;
+  border-radius:50%;
+  border:2px solid transparent
+}
+
+.ring1{
+  width:100%;
+  height:100%;
+  border-top-color:var(--teal);
+  border-right-color:var(--gold);
+  animation:spin 8s linear infinite
+}
+
+.ring2{
+  width:72%;
+  height:72%;
+  border-bottom-color:var(--teal);
+  border-left-color:var(--gold);
+  animation:spin 5.5s linear infinite reverse
+}
+
+.ring3{
+  width:44%;
+  height:44%;
+  border-top-color:var(--gold);
+  border-right-color:var(--teal);
+  animation:spin 3.8s linear infinite
+}
+
+.core{
+  width:26%;
+  height:26%;
+  background:linear-gradient(
+    135deg,
+    var(--teal),
+    var(--gold)
+  );
+  border-radius:50%;
+  box-shadow:0 0 25px rgba(0,230,224,.55);
+  animation:pulseCore 2.2s ease-in-out infinite
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg)
+  }
+}
+
+@keyframes pulseCore{
+  0%,100%{
+    transform:scale(1);
+    opacity:1
+  }
+  50%{
+    transform:scale(.88);
+    opacity:.75
+  }
+}
+
+.power-bar{
+  height:6px;
+  background:rgba(255,255,255,.08);
+  border-radius:100px;
+  overflow:hidden;
+  width:100%
+}
+
+.power-fill{
+  width:12%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--teal)
+  );
+  box-shadow:0 0 20px var(--gold);
+  animation:charge 3s ease-in-out infinite alternate
+}
+
+@keyframes charge{
+  0%{
+    width:12%
+  }
+  100%{
+    width:18%
+  }
+}
+
+.chips{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  width:100%
+}
+
+.chip{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+  background:rgba(255,255,255,.02)
+}
+
+.chip b{
+  display:block;
+  font-size:.7rem;
+  color:var(--muted);
+  letter-spacing:2px;
+  margin-bottom:6px
+}
+
+.chip span{
+  font-size:.9rem;
+  font-weight:700
+}
+
+.status-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px dashed rgba(240,211,106,.35);
+  padding:8px 14px;
+  border-radius:100px;
+  font-size:.7rem;
+  letter-spacing:2px;
+  color:var(--gold);
+  background:rgba(240,211,106,.06)
+}
 
 /* CHART */
-.chart-frame{margin-top:24px;border:1px solid var(--border-gold);border-radius:16px;overflow:hidden;background:#0e1015}
-.chart-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted)}
-.chart-header span{color:var(--gold)}
+.chart-frame{
+  margin-top:24px;
+  border:1px solid var(--border-gold);
+  border-radius:16px;
+  overflow:hidden;
+  background:#0e1015
+}
 
-footer{max-width:1280px;margin:80px auto 30px;padding:20px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem}
-footer a{color:var(--muted);text-decoration:none;margin-left:14px}
-footer a:hover{color:var(--gold)}
+.chart-header{
+  padding:14px 18px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:.85rem;
+  color:var(--muted)
+}
 
+.chart-header span{
+  color:var(--gold)
+}
+
+/* FOOTER */
+footer{
+  max-width:1280px;
+  margin:80px auto 30px;
+  padding:20px 24px;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:.8rem
+}
+
+footer a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:14px
+}
+
+footer a:hover{
+  color:var(--gold)
+}
+
+/* MOBILE */
 @media(max-width:900px){
-  .stats{grid-template-columns:1fr}
-  .grid3{grid-template-columns:1fr}
-  .mavis-body{grid-template-columns:1fr}
-  .nav-links{display:none}
+
+  .stats{
+    grid-template-columns:1fr
+  }
+
+  .grid3{
+    grid-template-columns:1fr
+  }
+
+  .mavis-body{
+    grid-template-columns:1fr
+  }
+
+  .console{
+    border-right:0;
+    border-bottom:1px solid var(--border)
+  }
+
+  .nav-links{
+    display:none
+  }
+
+  .nav-right a{
+    padding:8px 12px;
+    font-size:.75rem
+  }
+
+  .hero{
+    padding-top:65px
+  }
+
+  footer{
+    flex-direction:column;
+    gap:15px
+  }
 }
 </style>
 </head>
+
 <body>
 
 <!-- NAV -->
 <div class="top">
   <div class="nav">
+
     <div class="logo">
       <div class="logo-mark">P</div>
       PORTIVA
     </div>
+
     <div class="nav-links">
+
       <div class="dd">
-        <div class="dd-trigger mono">PRODUCT ▾</div>
+        <div class="dd-trigger mono">
+          PRODUCT ▾
+        </div>
+
         <div class="dd-menu">
           <a href="#mavis">Engine Mavis</a>
           <a>Staking (Soon)</a>
-          <a>Lock & Lend (Soon)</a>
+          <a>Lock &amp; Lend (Soon)</a>
         </div>
       </div>
+
       <div class="dd">
-        <div class="dd-trigger mono">SYSTEM ▾</div>
+        <div class="dd-trigger mono">
+          SYSTEM ▾
+        </div>
+
         <div class="dd-menu">
           <a href="#tokenomics">Tokenomics</a>
           <a href="#roadmap">Roadmap</a>
         </div>
       </div>
+
     </div>
+
     <div class="nav-right">
-      <a class="btn-ghost" href="https://x.com/Portiva_hq" target="_blank">X</a>
-      <a class="btn-ghost" href="https://discord.gg/PBQQRvukd" target="_blank">Discord</a>
-      <a class="btn-white" href="https://www.tiktok.com/@portiva.hq" target="_blank">TikTok</a>
+      <a
+        class="btn-ghost"
+        href="https://x.com/Portiva_hq"
+        target="_blank"
+      >
+        X
+      </a>
+
+      <a
+        class="btn-ghost"
+        href="https://discord.gg/PBQQRvukd"
+        target="_blank"
+      >
+        Discord
+      </a>
+
+      <a
+        class="btn-white"
+        href="https://www.tiktok.com/@portiva.hq"
+        target="_blank"
+      >
+        TikTok
+      </a>
     </div>
+
   </div>
 </div>
 
-<!-- HERO - Floating writeup restored -->
+
+<!-- HERO -->
 <div class="hero">
+
   <div class="hero-content">
-    <h1>PORTIVA<br><span>Activity. Utility. Rewards.</span></h1>
-    <p>A crypto ecosystem built around participation, staking, locking & future lending.</p>
+
+    <h1>
+      PORTIVA<br>
+      <span>Activity. Utility. Rewards.</span>
+    </h1>
+
+    <p>
+      A crypto ecosystem built around participation,
+      staking, locking &amp; future lending.
+    </p>
+
     <div class="cta">
-      <a class="primary" href="#mavis">ENTER SYSTEM</a>
-      <a class="secondary" href="https://x.com/Portiva_hq" target="_blank">FOLLOW ON X</a>
+      <a class="primary" href="#mavis">
+        ENTER SYSTEM
+      </a>
+
+      <a
+        class="secondary"
+        href="https://x.com/Portiva_hq"
+        target="_blank"
+      >
+        FOLLOW ON X
+      </a>
     </div>
+
   </div>
+
 </div>
 
-<!-- CLEAN STATS (no token numbers) -->
+
+<!-- STATS -->
 <div class="stats mono">
-  <div><b>ENGINE MAVIS</b><span>STANDBY MODE</span></div>
-  <div><b>STAGE 2 LIVE</b><span>MEMME NOW</span></div>
-  <div><b>SYSTEM</b><span>BUILDING</span></div>
-</div>
 
-<!-- TOKENOMICS - PURE DROPDOWN -->
-<div class="section" id="tokenomics">
-  <div class="label mono">TOKENOMICS</div>
-  <div class="h2">Built for sustainability.</div>
-
-  <div class="token-toggle" onclick="toggleTokenomics()">
-    <span class="mono" style="letter-spacing:1px">VIEW FULL TOKENOMICS</span>
-    <span id="tokenArrow">▾</span>
+  <div>
+    <b>ENGINE MAVIS</b>
+    <span>STANDBY MODE</span>
   </div>
 
-  <div class="token-content" id="tokenContent">
+  <div>
+    <b>STAGE 2 — Q4</b>
+    <span>MEME COMMUNITY</span>
+  </div>
+
+  <div>
+    <b>SYSTEM</b>
+    <span>BUILDING</span>
+  </div>
+
+</div>
+
+
+<!-- TOKENOMICS -->
+<div class="section" id="tokenomics">
+
+  <div class="label mono">
+    TOKENOMICS
+  </div>
+
+  <div class="h2">
+    Built for sustainability.
+  </div>
+
+  <div
+    class="token-toggle"
+    onclick="toggleTokenomics()"
+  >
+
+    <span
+      class="mono"
+      style="letter-spacing:1px"
+    >
+      VIEW FULL TOKENOMICS
+    </span>
+
+    <span id="tokenArrow">
+      ▾
+    </span>
+
+  </div>
+
+  <div
+    class="token-content"
+    id="tokenContent"
+  >
+
     <div class="grid3">
+
       <div class="card">
         <div class="num mono">01</div>
         <h3>72% — Community / Fair Launch</h3>
-        <p>For growth, staking, locking and long-term incentives.</p>
+        <p>
+          For growth, staking, locking and
+          long-term incentives.
+        </p>
       </div>
+
       <div class="card">
         <div class="num mono">02</div>
         <h3>10% — Future Rewards</h3>
-        <p>Reserved for future incentives and participation bonuses.</p>
+        <p>
+          Reserved for future incentives
+          and participation bonuses.
+        </p>
       </div>
+
       <div class="card">
         <div class="num mono">03</div>
         <h3>10% — Liquidity (Locked)</h3>
-        <p>Locked liquidity for healthy trading and stability.</p>
+        <p>
+          Locked liquidity for healthy
+          trading and stability.
+        </p>
       </div>
+
       <div class="card">
         <div class="num mono">04</div>
         <h3>5% — Community Treasury</h3>
-        <p>Development, grants and ecosystem expansion.</p>
+        <p>
+          Development, grants and
+          ecosystem expansion.
+        </p>
       </div>
+
       <div class="card">
         <div class="num mono">05</div>
         <h3>3% — Team (Locked 12 months)</h3>
-        <p>Long vesting, aligned with system growth.</p>
+        <p>
+          Long vesting, aligned with
+          system growth.
+        </p>
       </div>
+
     </div>
+
   </div>
+
 </div>
+
 
 <!-- ROADMAP -->
 <div class="section" id="roadmap">
-  <div class="label mono">ROADMAP</div>
-  <div class="h2">Five stages. One system.</div>
-  <div class="grid3">
-    <div class="card"><div class="num mono">STAGE 1 — BUILD</div><h3>Foundation</h3><p>Core contracts, brand, security.</p></div>
-    <div class="card"><div class="num mono">STAGE 2 — MEMME (LIVE)</div><h3>Culture & Community</h3><p>Grow attention while building utility.</p></div>
-    <div class="card"><div class="num mono">STAGE 3 — ACTIVATE</div><h3>Engine Mavis Live</h3><p>Tracking begins. Participation measurable.</p></div>
-    <div class="card"><div class="num mono">STAGE 4 — STAKE & LOCK</div><h3>Commitment</h3><p>New ways to contribute and earn.</p></div>
-    <div class="card"><div class="num mono">STAGE 5 — LEND & EXPAND</div><h3>Utility Layer</h3><p>Full utility cycle and partnerships.</p></div>
-    <div class="card" style="border-color:var(--border-gold)"><div class="num mono">ALWAYS — REWARDS</div><h3>Contribution = Value</h3><p>Every stage feeds the reward engine.</p></div>
+
+  <div class="label mono">
+    ROADMAP
   </div>
+
+  <div class="h2">
+    Five stages. One system.
+  </div>
+
+  <div class="grid3">
+
+    <div class="card">
+      <div class="num mono">
+        STAGE 1 — BUILD
+      </div>
+      <h3>Foundation</h3>
+      <p>
+        Core contracts, brand, security.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="num mono">
+        STAGE 2 — MEME (Q4)
+      </div>
+      <h3>Culture &amp; Community</h3>
+      <p>
+        Community activation, attention
+        and ecosystem growth.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="num mono">
+        STAGE 3 — ACTIVATE
+      </div>
+      <h3>Engine Mavis Live</h3>
+      <p>
+        Tracking begins.
+        Participation measurable.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="num mono">
+        STAGE 4 — STAKE &amp; LOCK
+      </div>
+      <h3>Commitment</h3>
+      <p>
+        New ways to contribute
+        and earn.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="num mono">
+        STAGE 5 — LEND &amp; EXPAND
+      </div>
+      <h3>Utility Layer</h3>
+      <p>
+        Full utility cycle
+        and partnerships.
+      </p>
+    </div>
+
+
+    <div
+      class="card"
+      style="border-color:var(--border-gold)"
+    >
+      <div class="num mono">
+        ALWAYS — REWARDS
+      </div>
+
+      <h3>
+        Contribution = Value
+      </h3>
+
+      <p>
+        Every stage feeds
+        the reward engine.
+      </p>
+    </div>
+
+  </div>
+
 </div>
+
 
 <!-- ENGINE MAVIS -->
 <div class="section" id="mavis">
-  <div class="label mono">CORE ENGINE</div>
-  <div class="h2">Engine Mavis is on standby.</div>
+
+  <div class="label mono">
+    CORE ENGINE
+  </div>
+
+  <div class="h2">
+    Engine Mavis is on standby.
+  </div>
+
   <div class="mavis">
+
     <div class="mavis-top mono">
-      <div style="display:flex;align-items:center;gap:10px">
-        <span class="dot"></span> MAVIS-01 // STANDBY
+
+      <div
+        style="
+          display:flex;
+          align-items:center;
+          gap:10px
+        "
+      >
+
+        <span class="dot"></span>
+
+        MAVIS-01 // STANDBY
+
       </div>
+
+
       <div class="status-badge">
-        <span class="dot" style="background:var(--gold);box-shadow:0 0 10px var(--gold)"></span>
+
+        <span
+          class="dot"
+          style="
+            background:var(--gold);
+            box-shadow:0 0 10px var(--gold)
+          "
+        ></span>
+
         COMING SOON — STAGE 3
+
       </div>
+
     </div>
+
+
     <div class="mavis-body">
+
       <div class="console mono">
-        <line>> initializing portiva_core...</line>
-        <line>> loading participation modules [stake, lock, lend]</line>
-        <line class="active">> verifying community activity ✓</line>
-        <line class="gold">> engine state: STANDBY — awaiting ignition</line>
-        <line>> power level: 12% — charging</line>
-        <line>> estimated ignition: Stage 3</line>
-        <line style="margin-top:16px;color:var(--muted)">> This machine will track every meaningful action for transparency and future rewards.</line>
+
+        <line>
+          &gt; initializing portiva_core...
+        </line>
+
+        <line>
+          &gt; loading participation modules
+          [stake, lock, lend]
+        </line>
+
+        <line class="active">
+          &gt; verifying community activity ✓
+        </line>
+
+        <line class="gold">
+          &gt; engine state: STANDBY —
+          awaiting ignition
+        </line>
+
+        <line>
+          &gt; power level: 12% — charging
+        </line>
+
+        <line>
+          &gt; estimated ignition: Stage 3
+        </line>
+
+        <line
+          style="
+            margin-top:16px;
+            color:var(--muted)
+          "
+        >
+          &gt; This machine will track every
+          meaningful action for transparency
+          and future rewards.
+        </line>
+
       </div>
+
+
       <div class="visual">
+
         <div class="engine-visual">
+
           <div class="ring ring1"></div>
           <div class="ring ring2"></div>
           <div class="ring ring3"></div>
+
           <div class="core"></div>
+
         </div>
-        <div class="power-bar"><div class="power-fill"></div></div>
+
+
+        <div class="power-bar">
+          <div class="power-fill"></div>
+        </div>
+
+
         <div class="chips mono">
-          <div class="chip"><b>CPU</b><span>MAVIS-01</span></div>
-          <div class="chip"><b>MODE</b><span style="color:var(--gold)">STANDBY</span></div>
-          <div class="chip"><b>SYNC</b><span style="color:var(--teal)">12%</span></div>
+
+          <div class="chip">
+            <b>CPU</b>
+            <span>MAVIS-01</span>
+          </div>
+
+          <div class="chip">
+            <b>MODE</b>
+            <span style="color:var(--gold)">
+              STANDBY
+            </span>
+          </div>
+
+          <div class="chip">
+            <b>SYNC</b>
+            <span style="color:var(--teal)">
+              12%
+            </span>
+          </div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </div>
+
 
 <!-- LIVE CHART -->
 <div class="section">
-  <div class="label mono">MARKET</div>
-  <div class="h2">Live Chart</div>
-  <div class="chart-frame">
-    <div class="chart-header mono">
-      <div>DEXSCREENER • LIVE</div>
-      <div><span>PORTIVA</span></div>
-    </div>
-    <div style="height:380px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem" class="mono">
-      Chart will appear here once the token is live on DexScreener
-    </div>
+
+  <div class="label mono">
+    MARKET
   </div>
+
+  <div class="h2">
+    Live Chart
+  </div>
+
+  <div class="chart-frame">
+
+    <div class="chart-header mono">
+
+      <div>
+        DEXSCREENER • LIVE
+      </div>
+
+      <div>
+        <span>PORTIVA</span>
+      </div>
+
+    </div>
+
+
+    <div
+      style="
+        height:380px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:var(--muted);
+        font-size:.9rem
+      "
+      class="mono"
+    >
+      Chart will appear here once the
+      token is live on DexScreener
+    </div>
+
+  </div>
+
 </div>
 
+
+<!-- FOOTER -->
 <footer class="mono">
-  <div>© 2026 PORTIVA — Activity. Utility. Rewards.</div>
+
   <div>
-    <a href="https://x.com/Portiva_hq" target="_blank">X</a>
-    <a href="https://discord.gg/PBQQRvukd" target="_blank">Discord</a>
-    <a href="https://www.tiktok.com/@portiva.hq" target="_blank">TikTok</a>
+    © 2026 PORTIVA — Activity. Utility. Rewards.
   </div>
+
+  <div>
+
+    <a
+      href="https://x.com/Portiva_hq"
+      target="_blank"
+    >
+      X
+    </a>
+
+    <a
+      href="https://discord.gg/PBQQRvukd"
+      target="_blank"
+    >
+      Discord
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@portiva.hq"
+      target="_blank"
+    >
+      TikTok
+    </a>
+
+  </div>
+
 </footer>
 
+
 <script>
+
 function toggleTokenomics(){
-  const content = document.getElementById('tokenContent');
-  const arrow = document.getElementById('tokenArrow');
+
+  const content =
+    document.getElementById('tokenContent');
+
+  const arrow =
+    document.getElementById('tokenArrow');
+
   content.classList.toggle('show');
-  arrow.textContent = content.classList.contains('show') ? '▴' : '▾';
+
+  arrow.textContent =
+    content.classList.contains('show')
+      ? '▴'
+      : '▾';
+
 }
+
 </script>
+
 </body>
 </html>
